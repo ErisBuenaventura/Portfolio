@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top">
+        <div class="container-fluid d-flex align-items-center">
+
+            <!-- LEFT: BRAND -->
+            <a class="navbar-brand me-auto" href="#">
+                <img src="files/logo.png" alt="Logo" class="nav-logo">
+            </a>
+
+            <!-- CENTER: NAV LINKS (DESKTOP ONLY) -->
+            <ul class="navbar-nav flex-row mx-auto d-none d-lg-flex gap-4">
+                <li class="nav-item">
+                    <a class="nav-link text-red" href="#about">
+                        <i class="bi bi-info-circle"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-red" href="#skills">
+                        <i class="bi bi-star-fill"></i> Skills
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-red" href="#experience">
+                        <i class="bi bi-briefcase-fill"></i> Experience
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-red" href="#contact">
+                        <i class="bi bi-envelope-fill"></i> Contact
+                    </a>
+                </li>
+            </ul>
+
+            <!-- RIGHT: DARK MODE (DESKTOP) -->
+            <div class="d-none d-lg-block ms-auto">
+                <button id="toggleMode" class="btn btn-outline-red">
+                    <i class="bi bi-moon"></i> Dark Mode
+                </button>
+            </div>
+
+            <!-- MOBILE: DARK MODE + MENU -->
+            <div class="d-flex d-lg-none ms-auto">
+                <button id="toggleModeMobile" class="btn btn-outline-red me-2">
+                    <i class="bi bi-moon"></i> Dark Mode
+                </button>
+                <button class="btn btn-outline-red" id="sidebarToggle">
+                    <span id="menuIcon"><i class="bi bi-list"></i></span>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Sidebar (mobile only) -->
+    <div class="sidebar" id="sidebar">
+        <a href="#profile"><i class="bi bi-person"></i> Profile</a>
+        <a href="#about"><i class="bi bi-info-circle"></i> About</a>
+        <a href="#skills"><i class="bi bi-star-fill"></i> Skills</a>
+        <a href="#experience"><i class="bi bi-briefcase-fill"></i> Experience</a>
+        <a href="#contact"><i class="bi bi-envelope-fill"></i> Contact</a>
+    </div>
+
+    <div id="overlay"></div>
+
+    <main class="main-layout">
+
+    <!-- LEFT PROFILE PANEL (1/4) -->
+    <aside id="profile" class="profile-panel">
+        <img src="files/profile.jpg" class="profile-img" alt="Profile">
+        <h3 class="mt-3">ERIS ALYANA BUENAVENTURA</h3>
+        <p class="text-muted">IT ADMIN</p>
+
+        <div class="profile-info mt-3">
+        <p><i class="bi bi-geo-alt-fill me-2 text-danger"></i>CAA, Las Piñas, Philippines</p>
+        <p><i class="bi bi-briefcase-fill me-2 text-danger"></i>Web Developer</p>
+        <p><i class="bi bi-code-slash me-2 text-danger"></i>Frontend / Backend</p>
+        </div>
+    </aside>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- RIGHT CONTENT PANEL (3/4) -->
+    <section class="content-panel">
+
+        <!-- ABOUT -->
+        <section id="about" class="section fade-up-section">
+            <h1 class="animate-title">About Me</h1>
+            <p class="animate-text">
+                I am an IT professional with experience in technical support, web development, and QA testing.
+                I have developed WordPress websites and designed web interfaces using HTML, CSS, and JavaScript.
+                Skilled in troubleshooting, project coordination, and teamwork, with projects showcased on GitHub.
+            </p>
+
+            <!-- BUTTONS -->
+            <div class="mt-4">
+                <a href="#skills" class="btn btn-outline-red animate-button me-3">Read More</a>
+                <button type="button" class="btn btn-outline-red animate-button" data-bs-toggle="modal" data-bs-target="#cvModal">
+                    View CV
+                </button>
+            </div>
+        </section>
+
+        <!-- CV MODAL -->
+        <div class="modal fade cv-modal" id="cvModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- HEADER -->
+                    <div class="modal-header">
+                        <h5 class="modal-title">My Resume</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- BODY -->
+                    <div class="modal-body">
+
+                        <!-- PAPER AREA -->
+                        <div class="cv-paper">
+                            <iframe src="files/resume.pdf"></iframe>
+                        </div>
+
+                    </div>
+
+                    <!-- FOOTER -->
+                    <div class="modal-footer">
+                        <a href="files/resume.pdf" download class="btn btn-outline-red">
+                            <i class="bi bi-download me-1"></i> Download CV
+                        </a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-lg me-1"></i> Close
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+   
+        <div class="section-divider"></div>
+
+        <section id="skills" class="skills-section">
+            <h1 class="animate-title">Skills</h1>
+
+            <div class="skills-grid">
+
+                <!-- Web Development -->
+                <div class="skill-category">
+                    <h3><i class="bi bi-code-slash"></i> Web Development</h3>
+                    <div class="skills-cards-wrapper marquee-wrapper">
+                        <div class="skills-marquee">
+                            <div class="skill-card">
+                                <i class="bi bi-filetype-html skill-icon"></i>
+                                <span>HTML</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="bi bi-filetype-css skill-icon"></i>
+                                <span>CSS</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="bi bi-filetype-js skill-icon"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="bi bi-arrow-repeat skill-icon"></i>
+                                <span>Ajax</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="bi bi-filetype-php skill-icon"></i>
+                                <span>PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Management -->
+                <div class="skill-category">
+                    <h3><i class="bi bi-database-fill"></i> Database Management</h3>
+                    <div class="skills-cards-wrapper static-wrapper">
+                        <div class="skill-card">
+                            <i class="bi bi-database skill-icon"></i>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming & Frameworks -->
+                <div class="skill-category">
+                    <h3><i class="bi bi-cpu-fill"></i> Programming & Frameworks</h3>
+                    <div class="skills-cards-wrapper marquee-wrapper">
+                        <div class="skills-marquee">
+                            <div class="skill-card">
+                                <i class="bi bi-bootstrap-fill skill-icon"></i>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="bi bi-wind skill-icon"></i>
+                                <span>TailwindCSS</span>
+                            </div>
+                            <div class="skill-card">
+                                <i class="bi bi-microsoft skill-icon"></i>
+                                <span>C#.NET Framework</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software & Tools -->
+                <div class="skill-category">
+                    <h3><i class="bi bi-tools"></i> Software & Productivity Tools</h3>
+                    <div class="skills-cards-wrapper marquee-wrapper">
+                        <div class="skills-marquee">
+                            <div class="skill-card"><i class="bi bi-terminal skill-icon"></i><span>VSCode</span></div>
+                            <div class="skill-card"><i class="bi bi-hdd-fill skill-icon"></i><span>XAMPP</span></div>
+                            <div class="skill-card"><i class="bi bi-microsoft skill-icon"></i><span>Microsoft Office</span></div>
+                            <div class="skill-card"><i class="bi bi-google skill-icon"></i><span>Google Apps</span></div>
+                            <div class="skill-card"><i class="bi bi-palette-fill skill-icon"></i><span>Canva</span></div>
+                            <div class="skill-card"><i class="bi bi-scissors skill-icon"></i><span>CapCut</span></div>
+                            <div class="skill-card"><i class="bi bi-brush-fill skill-icon"></i><span>Picsart</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Domain & Hosting -->
+                <div class="skill-category">
+                    <h3><i class="bi bi-cloud-upload-fill"></i> Domain & Hosting</h3>
+                    <div class="skills-cards-wrapper marquee-wrapper">
+                        <div class="skills-marquee">
+                            <div class="skill-card"><i class="bi bi-globe skill-icon"></i><span>InfinityFree</span></div>
+                            <div class="skill-card"><i class="bi bi-globe2 skill-icon"></i><span>Crazy Domain</span></div>
+                            <div class="skill-card"><i class="bi bi-envelope-fill skill-icon"></i><span>SMTP API (Brevo)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="experience" class="experience-section ">
+            <h1 class="animate-title"><i class="bi bi-briefcase-fill"></i> Experience</h1>
+
+            <div class="experience-grid">
+
+                <!-- Experience 1 -->
+                <div class="experience-card" style="background-image: url('files/saveplus.png');">
+                    <div class="experience-card-header">
+                        <div class="header-content">
+                            <div>
+                                <h3 class="company">SAVE PLUS LABOR SERVICE COOPERATIVE</h3>
+                                <p class="position">IT Admin | Technical Support</p>
+                            </div>
+                            <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSavePlus">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="experience-card" style="background-image: url('files/sbt.png');">
+                    <div class="experience-card-header">
+                        <div class="header-content">
+                            <div>
+                                <h3 class="company">SUPERIOR BT INC</h3>
+                                <p class="position">IT Intern Technical support | Web Developer | QA Tester</p>
+                            </div>
+                            <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSBT">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="experience-card" style="background-image: url('files/kegg.png');">
+                    <div class="experience-card-header">
+                        <div class="header-content">
+                            <div>
+                                <h3 class="company">FREELANCE PROJECT</h3>
+                                <p class="position">Website Developer | Accounting System for K-EGG Business</p>
+                            </div>
+                            <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalKEGG">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================
+        MODALS
+        ===================== -->
+
+        <!-- Modal 1: SAVE PLUS -->
+        <div class="modal fade" id="modalSavePlus" tabindex="-1" aria-labelledby="modalSavePlusLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSavePlusLabel">SAVE PLUS LABOR SERVICE COOPERATIVE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Position:</strong> IT Admin | Technical Support</p>
+                    <p><strong>Duration:</strong> August 2025 - Present</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                    <li>Troubleshoot and configure PCs and printers (Smart iDesigner & Epson).</li>
+                    <li>Manage company domain, test websites, and coordinate with partner developers for web app launches.</li>
+                    <li>Set up printers, optimize ID templates, and print employee ID cards.</li>
+                    <li>Coordinate projects with partner companies.</li>
+                    <li>Monitor schedules, generate reports, and provide real-time support via email and chat.</li>
+                    </ul>
+                    <p><strong>Location:</strong> Moonwalk, Parañaque City, Philippines</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Modal 2: SBT -->
+            <div class="modal fade" id="modalSBT" tabindex="-1" aria-labelledby="modalSBTLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSBTLabel">SUPERIOR BT INC</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Position:</strong> IT Intern Technical support | Web Developer | QA Tester</p>
+                    <p><strong>Duration:</strong> February 2025 – June 2025</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                    <li>Contributed to developing and testing a WordPress-based tourist website, improving layout and quality.</li>
+                    <li>Set up PCs, including hardware installation, software configuration, and troubleshooting.</li>
+                    <li>Designed and enhanced web interfaces for university, portfolio, and calculator projects using HTML, CSS, and JavaScript.</li>
+                    <li>Published projects on GitHub to showcase technical skills and progress.</li>
+                    <li>Collaborated in a team-based IT environment to strengthen communication and problem-solving abilities.</li>
+                    <li>Familiarized with Internet Service Provider (ISP) operations and the OSI model in networking fundamentals.</li>
+                    </ul>
+                    <p><strong>Location:</strong> Alabang, Muntinlupa City, Philippines</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Modal 3: KEGG -->
+            <div class="modal fade" id="modalKEGG" tabindex="-1" aria-labelledby="modalKEGGLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalKEGGLabel">FREELANCE PROJECT: ACCOUNTING SYSTEM FOR K-EGG BUSINESS</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Position:</strong> Website Developer</p>
+                    <p><strong>Duration:</strong> June 2025 – July 2025</p>
+                    <p><strong>Tech Stack:</strong> HTML, CSS/Bootstrap, JavaScript, PHP, AJAX</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                    <li><strong>Staff Module:</strong> Staff registration and login, Personalized dashboard, Sales and expenses management</li>
+                    <li><strong>Admin Module:</strong> Admin login and dashboard, Staff management and data storage, Financial reports including ledger and journal, Inventory, sales, and expenses tracking, Automated tax computation and tax balance management</li>
+                    </ul>
+                    <p><strong>Location:</strong> CAA, Las Piñas City, Philippines</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+     
+        <div class="section-divider"></div>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+        <h1 class="animate-title">Contact</h1>
+
+        <div class="contact-grid">
+
+            <div class="contact-info fade-up-section">
+            <p class="animate-text"><strong>Email:</strong> erisbuenaventura22@gmail.com</p>
+            <p class="animate-text"><strong>Phone:</strong> 0977-171-4009</p>
+            <p class="animate-text"><strong>Address:</strong> Las Piñas City, Philippines</p>
+            </div>
+
+            <div class="social-links fade-up-section">
+            <a href="https://www.facebook.com/its.me.eris.buenaventura.22" target="_blank" class="social-icon animate-button">
+                <i class="bi bi-facebook"></i> Facebook
+            </a>
+
+            <a href="https://github.com/ErisBuenaventura" target="_blank" class="social-icon animate-button">
+                <i class="bi bi-github"></i> Github
+            </a>
+
+            <a href="https://www.linkedin.com/in/eris-alyana-buenaventura-1347b034a/" target="_blank" class="social-icon animate-button">
+                <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+            </div>
+
+            <div class="contact-form fade-up-section">
+            <h3 class="animate-title">Send a Message</h3>
+            <form>
+                <label for="name" class="animate-text">Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+
+                <label for="email" class="animate-text">Your Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Your Email" required>
+
+                <label for="message" class="animate-text">Your Message</label>
+                <textarea id="message" name="message" class="form-input" placeholder="Write your message here" required></textarea>
+
+                <button type="submit" class="btn btn-outline-red animate-button">Send Message</button>
+            </form>
+            </div>
+
+        </div>
+        </section>
+
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        &copy; 2025 ERIS • All Rights Reserved
+    </footer>
+
+    <!-- Bootstrap JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Your custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
