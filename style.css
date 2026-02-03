@@ -22,32 +22,24 @@ body {
 }
 
 /* =====================
-   LIGHT MODE
+   COLOR MODES
 ===================== */
 body.light-mode {
     background-color: var(--white);
     color: var(--black);
 }
 
-body.light-mode a,
-body.light-mode .text-red {
-    color: var(--red);
-}
-
-/* =====================
-   DARK MODE
-===================== */
 body.dark-mode {
     background-color: var(--black);
     color: var(--white);
 }
 
-body.dark-mode a,
-body.dark-mode .text-red {
+body a,
+body .text-red {
     color: var(--red);
 }
 
-/* Profile subtitle adjustment for dark mode */
+/* Profile subtitle (dark mode only) */
 body.dark-mode .profile-panel .text-muted {
     color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -57,80 +49,45 @@ body.dark-mode .profile-panel .text-muted {
 ===================== */
 .navbar {
     padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.136);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-logo {
-    height: 34px;        /* ideal size for Bootstrap navbar */
+    height: 34px;
     width: auto;
     object-fit: contain;
     display: block;
 }
 
 /* =====================
-   LIGHT MODE NAVBAR
+   NAVBAR TEXT (ALL MODES)
 ===================== */
-body.light-mode .navbar {
-    background-color: var(--white);
-}
-
-body.light-mode .navbar .navbar-brand,
-body.light-mode .navbar .nav-link {
-    color: var(--black);
-}
-
-body.light-mode .navbar .nav-link:hover {
-    color: var(--red);
-}
-
-/* Active link - light mode */
-body.light-mode .navbar .nav-link.active {
-    color: var(--red);
-    font-weight: bold;
-    border-bottom: 2px solid var(--red);
-}
-
-/* =====================
-   DARK MODE NAVBAR
-===================== */
-body.dark-mode .navbar {
-    background-color: var(--black);
-}
-
-body.dark-mode .navbar .navbar-brand,
-body.dark-mode .navbar .nav-link {
-    color: var(--white);
-}
-
-body.dark-mode .navbar .nav-link:hover {
-    color: var(--red);
-}
-
-/* Active link - dark mode */
-body.dark-mode .navbar .nav-link.active {
-    color: var(--red);
-    font-weight: bold;
-    border-bottom: 2px solid var(--red);
-}
-
-/* =====================================
-   NAVBAR LINK BASE
-===================================== */
+.navbar .navbar-brand,
 .navbar .nav-link {
-    position: relative;
-    transition: all 0.3s ease;
     color: var(--black);
-}
-
-body.dark-mode .navbar .nav-link {
-    color: var(--white);
+    transition: color 0.3s ease;
 }
 
 .navbar .nav-link:hover {
     color: var(--red);
 }
 
+/* Active link (shared) */
+.navbar .nav-link.active {
+    color: var(--red);
+    font-weight: bold;
+    border-bottom: 2px solid var(--red);
+}
+
+/* =====================
+   NAVBAR LINK BASE
+===================== */
+.navbar .nav-link {
+    position: relative;
+}
 
 /* =====================================
    SIDEBAR (MOBILE)
