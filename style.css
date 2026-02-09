@@ -381,6 +381,48 @@ body.dark-mode .profile-panel {
   color: var(--text-primary);
 }
 
+/* =====================
+   ABOUT BUTTONS (MOBILE 2-COLUMNS)
+===================== */
+.about-buttons {
+    display: flex;
+    gap: 1rem; /* space between buttons */
+    width: 100%;
+}
+
+/* Tablet/mobile: make buttons equal width */
+@media (max-width: 768px) {
+    .about-buttons .btn {
+        flex: 1; /* each button takes 50% width */
+        text-align: center;
+    }
+}
+
+/* Social icons alignment (mobile only) */
+.about-social {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .about-social {
+        justify-content: flex-start; /* align left under buttons */
+    }
+}
+
+/* Extra small phones adjustments */
+@media (max-width: 480px) {
+    .about-buttons .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .about-social i {
+        font-size: 1.1rem; /* slightly smaller icons on small phones */
+    }
+}
+
 /* Fade-up animation for entire section */
 .fade-up-section {
   opacity: 0;
