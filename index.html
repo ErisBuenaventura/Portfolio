@@ -430,12 +430,14 @@
 
         <div class="contact-grid">
 
+            <!-- Contact Info -->
             <div class="contact-info fade-up-section">
             <p class="animate-text"><strong>Email:</strong> erisbuenaventura22@gmail.com</p>
             <p class="animate-text"><strong>Phone:</strong> 0977-171-4009</p>
             <p class="animate-text"><strong>Address:</strong> Las Piñas City, Philippines</p>
             </div>
 
+            <!-- Social Links -->
             <div class="social-links fade-up-section">
             <a href="https://www.facebook.com/its.me.eris.buenaventura.22" target="_blank" class="social-icon animate-button">
                 <i class="bi bi-facebook"></i> Facebook
@@ -450,14 +452,23 @@
             </a>
             </div>
 
+            <!-- Contact Form -->
             <div class="contact-form fade-up-section">
             <h3 class="animate-title">Send a Message</h3>
-            <form>
+
+            <!-- Formspree integration -->
+            <form 
+                action="https://formspree.io/f/mwvnbeyj" 
+                method="POST"
+            >
+                <!-- Redirect to your own thank-you page (optional) -->
+                <input type="hidden" name="_next" value="https://yourusername.github.io/thankyou.html">
+
                 <label for="name" class="animate-text">Your Name</label>
                 <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
 
                 <label for="email" class="animate-text">Your Email</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="Your Email" required>
+                <input type="email" id="email" name="_replyto" class="form-input" placeholder="Your Email" required>
 
                 <label for="message" class="animate-text">Your Message</label>
                 <textarea id="message" name="message" class="form-input" placeholder="Write your message here" required></textarea>
