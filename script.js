@@ -97,3 +97,28 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// =====================
+// MAP
+// =====================
+const map = L.map('map').setView([14.4507, 120.9820], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+}).addTo(map);
+
+L.marker([14.4507, 120.9820]).addTo(map)
+  .bindPopup('Las Piñas City, Philippines')
+  .openPopup();
+
+// =====================
+// CARD TOGGLE
+// =====================
+const card = document.querySelector('.contact-card');
+const arrow = document.getElementById('toggleArrow');
+
+if (arrow) {
+  arrow.addEventListener('click', () => {
+    card.classList.toggle('expanded');
+    arrow.innerHTML = card.classList.contains('expanded') ? '&#9660;' : '&#9650;';
+  });
+}
