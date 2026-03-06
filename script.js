@@ -122,3 +122,18 @@ if (arrow) {
     arrow.innerHTML = card.classList.contains('expanded') ? '&#9660;' : '&#9650;';
   });
 }
+
+
+const fadeElements = document.querySelectorAll(".fade-section");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+fadeElements.forEach(el => observer.observe(el));

@@ -249,7 +249,7 @@ body.sidebar-open #menuIcon {
 ===================== */
 
 section {
-    scroll-margin-top: 80px; /* Ensures the content is not hidden behind the navbar */
+    scroll-margin-top: 80px;
 }
 
 .section-divider {
@@ -647,168 +647,91 @@ body.modal-open {
 /* =====================
    SKILLS SECTION
 ===================== */
-.skills-section {
-  padding: 2rem 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1rem;
-  background-color: var(--bg);
-  color: var(--text-primary);
-  overflow: hidden;
+.skills-section{
+padding:60px 5%;
 }
 
-/* Heading Animation */
-.skills-section h1.animate-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--red);
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: fadeInLeft 0.8s forwards;
+.skills-section h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--red);
 }
 
-/* =====================
-   GRID FOR SKILL CATEGORIES
-===================== */
-.skills-grid {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
-  gap: 1rem;
-  flex-grow: 1;
+/* CATEGORY */
+
+.skill-category{
+margin-bottom:35px;
 }
 
-/* =====================
-   SKILL CATEGORY
-===================== */
-.skill-category h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.skill-category h3{
+font-size:1.2rem;
+margin-bottom:15px;
+display:flex;
+align-items:center;
+gap:8px;
 }
 
-/* =====================
-   CARDS WRAPPER
-===================== */
-.skills-cards-wrapper {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 12px;
-  background-color: var(--marquee-bg);
-  padding: 0.5rem 0;
-  display: flex;
-  justify-content: flex-start;
+/* SKILLS ROW */
+
+.skills-row{
+display:flex;
+flex-direction:row;
+flex-wrap:nowrap;
+gap:16px;
+overflow-x:auto;
 }
 
-.skills-cards-wrapper.static-wrapper {
-  justify-content: center;
+.skills-row::-webkit-scrollbar{
+display:none;
 }
 
-/* =====================
-   MARQUEE EFFECT
-===================== */
-.marquee-wrapper {
-  position: relative;
+/* SKILL CARD */
+
+.skill-card{
+min-width:110px;
+padding:14px;
+background:var(--card);
+border-radius:14px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+box-shadow:0 6px 18px var(--shadow);
+transition:0.3s;
+cursor:pointer;
 }
 
-.skills-marquee {
-  display: flex;
-  gap: 12px;
-  animation: marqueeLoop 20s linear infinite;
+.skill-card img{
+width:48px;
+height:48px;
+object-fit:contain;
+margin-bottom:6px;
 }
 
-@keyframes marqueeLoop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.skill-card span{
+font-size:0.8rem;
+font-weight:500;
+text-align:center;
 }
 
-/* =====================
-   SKILL CARD (UPDATED FOR ICON TOP)
-===================== */
-.skill-card {
-  flex-shrink: 0;
-  padding: 12px 20px;
-  background-color: var(--card-bg-light);
-  color: var(--card-text-light);
-  border-radius: 12px;
-  font-weight: 600;
-  box-shadow: 0 6px 16px var(--shadow-light);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* NEW FOR ICON TOP */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 6px;
+.skill-card:hover{
+transform:translateY(-6px) scale(1.05);
+box-shadow:0 12px 30px var(--shadow);
 }
 
-/* Icon styling */
-.skill-card .skill-icon {
-  font-size: 38px;  /* Big icon */
-  display: block;
-}
+/* TOGGLE BUTTON */
 
-/* Text styling */
-.skill-card span {
-  font-size: 0.8rem;
-  margin-top: 4px;
-  font-weight: 500;
+#themeToggle{
+position:fixed;
+top:20px;
+right:20px;
+padding:10px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
 }
-
-.skill-card:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px var(--shadow-light);
-}
-
-/* =====================
-   DARK MODE
-===================== */
-body.dark-mode .skill-card {
-  background-color: var(--card-bg-dark);
-  color: var(--card-text-dark);
-  box-shadow: 0 6px 15px var(--shadow-dark);
-}
-
-body.dark-mode .skills-cards-wrapper {
-  background-color: var(--marquee-bg-dark);
-}
-
-/* =====================
-   STATIC WRAPPER
-===================== */
-.skills-cards-wrapper.static-wrapper {
-  justify-content: flex-start;
-}
-
-/* =====================
-   KEYFRAMES
-===================== */
-@keyframes fadeInLeft {
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 768px) {
-  .skills-cards-wrapper { width: 80%; }
-  .skill-card .skill-icon { font-size: 34px; }
-  .skill-card span { font-size: 0.75rem; }
-}
-
-@media (max-width: 480px) {
-  .skills-cards-wrapper { width: 100%; }
-  .skill-card .skill-icon { font-size: 30px; }
-  .skill-card span { font-size: 0.7rem; }
-}
-
 
 /* =====================
    EXPERIENCE SECTION
@@ -1252,4 +1175,17 @@ body.dark-mode .modal-title {
     font-size: 0.65rem;
     padding: 0.35rem;
   }
+}
+
+/* Fade-in initial state */
+.fade-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When visible */
+.fade-section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
