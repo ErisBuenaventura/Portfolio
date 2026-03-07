@@ -661,15 +661,13 @@ SKILLS SECTION
 }
 
 .skill-category {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .skill-category h3 {
   font-size: 1.2rem;
-  margin-bottom: 15px;
   display: flex;
   align-items: center;
-  gap: 8px;
   color: #000000;
 }
 
@@ -683,13 +681,13 @@ SKILLS SECTION
 /* ROW */
 .skills-row {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   animation: marquee 20s linear infinite;
 }
 
 .skill-icon {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   background: #111;
   border-radius: 20px;
   display: flex;
