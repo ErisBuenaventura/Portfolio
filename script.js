@@ -1,81 +1,70 @@
-/* ------------------------------
+/* ===============================
    DARK / LIGHT MODE TOGGLE
------------------------------- */
+=============================== */
 function toggleMode() {
-  document.body.classList.toggle('dark-mode');
-  document.body.classList.toggle('light-mode');
-
-  const isDark = document.body.classList.contains('dark-mode');
-  const text = isDark ? "Light Mode" : "Dark Mode";
+  const body = document.body;
   const desktopBtn = document.getElementById('toggleMode');
   const mobileBtn = document.getElementById('toggleModeMobile');
 
-  if (isDark) {
-      // DARK MODE ACTIVE → show sun icon + "Light Mode"
-      desktopBtn.innerHTML = '<i class="bi bi-sun"></i> Light Mode';
-      if (mobileBtn) mobileBtn.innerHTML = '<i class="bi bi-sun"></i> Light Mode';
-  } else {
-      // LIGHT MODE ACTIVE → show moon icon + "Dark Mode"
-      desktopBtn.innerHTML = '<i class="bi bi-moon"></i> Dark Mode';
-      if (mobileBtn) mobileBtn.innerHTML = '<i class="bi bi-moon"></i> Dark Mode';
-  }
+  body.classList.toggle('dark-mode');
+  body.classList.toggle('light-mode');
 
+  const isDark = body.classList.contains('dark-mode');
+
+  // Update button icons and text
+  const iconHTML = isDark 
+    ? '<i class="bi bi-sun"></i> Light Mode' 
+    : '<i class="bi bi-moon"></i> Dark Mode';
+
+  desktopBtn.innerHTML = iconHTML;
+  if (mobileBtn) mobileBtn.innerHTML = iconHTML;
 }
 
 document.getElementById('toggleMode').addEventListener('click', toggleMode);
-
 const toggleModeMobile = document.getElementById('toggleModeMobile');
-if (toggleModeMobile) {
-  toggleModeMobile.addEventListener('click', toggleMode);
-}
+if (toggleModeMobile) toggleModeMobile.addEventListener('click', toggleMode);
 
 
-/* ------------------------------
+/* ===============================
    SIDEBAR + OVERLAY TOGGLE
------------------------------- */
+=============================== */
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
 const toggleBtn = document.getElementById('sidebarToggle');
 const menuIcon = document.getElementById('menuIcon');
 const sidebarLinks = document.querySelectorAll('.sidebar a');
 
-let isOpen = false;
+let isSidebarOpen = false;
 
 function closeSidebar() {
   sidebar.classList.remove('active');
   overlay.classList.remove('active');
   document.body.classList.remove('sidebar-open');
-
   setTimeout(() => overlay.style.display = 'none', 300);
-
   menuIcon.textContent = '☰';
-  isOpen = false;
+  isSidebarOpen = false;
 }
 
 toggleBtn.addEventListener('click', () => {
-  if (!isOpen) {
+  if (!isSidebarOpen) {
     sidebar.classList.add('active');
     overlay.style.display = 'block';
     overlay.classList.add('active');
     menuIcon.textContent = '✕';
     document.body.classList.add('sidebar-open');
-    isOpen = true;
+    isSidebarOpen = true;
   } else {
     closeSidebar();
   }
 });
 
 overlay.addEventListener('click', closeSidebar);
-
-/* Auto-close sidebar when a link is clicked */
-sidebarLinks.forEach(link => {
-  link.addEventListener('click', closeSidebar);
-});
+sidebarLinks.forEach(link => link.addEventListener('click', closeSidebar));
 
 
-/* ------------------------------
+/* ===============================
    ACTIVE NAV LINK ON SCROLL
------------------------------- */
+=============================== */
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.navbar .nav-link');
 
@@ -84,39 +73,37 @@ window.addEventListener('scroll', () => {
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 100;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute('id');
-    }
+    if (pageYOffset >= sectionTop) current = section.getAttribute('id');
   });
 
   navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === '#' + current) {
-      link.classList.add('active');
-    }
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
   });
 });
 
-// =====================
-// MAP
-// =====================
+
+/* ===============================
+   MAP SETUP (Leaflet)
+=============================== */
 const map = L.map('map').setView([14.4507, 120.9820], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
 }).addTo(map);
 
-L.marker([14.4507, 120.9820]).addTo(map)
+L.marker([14.4507, 120.9820])
+  .addTo(map)
   .bindPopup('Las Piñas City, Philippines')
   .openPopup();
 
-// =====================
-// CARD TOGGLE
-// =====================
+
+/* ===============================
+   CONTACT CARD TOGGLE
+=============================== */
 const card = document.querySelector('.contact-card');
 const arrow = document.getElementById('toggleArrow');
 
-if (arrow) {
+if (arrow && card) {
   arrow.addEventListener('click', () => {
     card.classList.toggle('expanded');
     arrow.innerHTML = card.classList.contains('expanded') ? '&#9660;' : '&#9650;';
@@ -124,16 +111,35 @@ if (arrow) {
 }
 
 
+/* ===============================
+   FADE-IN SECTIONS ON SCROLL
+=============================== */
 const fadeElements = document.querySelectorAll(".fade-section");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, {
-    threshold: 0.2
-});
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+}, { threshold: 0.2 });
 
-fadeElements.forEach(el => observer.observe(el));
+fadeElements.forEach(el => fadeObserver.observe(el));
+
+
+/* ===============================
+   AUTO-SCROLLING SKILLS ROWS
+=============================== */
+const marquees = document.querySelectorAll('.skills-row');
+
+marquees.forEach(row => {
+  let speed = 1; // pixels per frame
+  let pos = 0;
+
+  function scroll() {
+    pos -= speed;
+    if (Math.abs(pos) >= row.scrollWidth / 2) pos = 0;
+    row.style.transform = `translateX(${pos}px)`;
+    requestAnimationFrame(scroll);
+  }
+
+  scroll();
+});
