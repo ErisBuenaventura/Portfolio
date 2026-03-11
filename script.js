@@ -143,3 +143,27 @@ marquees.forEach(row => {
 
   scroll();
 });
+
+/* ===============================
+   ABOUT SECTION
+=============================== */
+const ctx = document.getElementById('skillsChart').getContext('2d');
+const skillsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
+        datasets: [{
+            label: 'Skill Level',
+            data: [90, 85, 80, 75, 70],
+            borderColor: 'rgba(255, 76, 76, 1)',
+            backgroundColor: 'rgba(255, 76, 76, 0.2)',
+            fill: true,
+            tension: 0.3
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: true } },
+        scales: { y: { beginAtZero: true, max: 100 } }
+    }
+});

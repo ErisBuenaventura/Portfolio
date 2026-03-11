@@ -13,6 +13,15 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- Your Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -117,72 +126,71 @@
     <section class="content-panel">
 
         <!-- ABOUT SECTION -->
-            <section id="about" class="section fade-section">
-                <!-- SECTION TITLE -->
-                <h1 class="animate-title">About Me</h1>
+            <section id="about">
+                <h1>About Me</h1>
+                    <p>
+                        I am an IT professional with experience in technical support, system maintenance,
+                        and troubleshooting hardware and office systems. I enjoy solving technical
+                        problems, supporting daily IT operations, and continuously learning about
+                        networking and system management.
+                    </p>
 
-                <!-- DESCRIPTION -->
-                <p class="animate-text">
-                    I am an IT professional with experience in technical support, system maintenance, and troubleshooting hardware and office systems. 
-                    I enjoy solving technical problems, supporting daily IT operations, and continuously learning about networking and system management.
-                </p>
+                    <!-- BUTTONS -->
+                    <div class="about-buttons">
+                        <a href="#skills" class="btn btn-outline-danger">Read More</a>
 
-                <!-- BUTTONS -->
-                <div class="about-buttons mt-4">
-                    <a href="#skills" class="btn btn-outline-red animate-button">Read More</a>
-                    <button type="button" class="btn btn-outline-red animate-button" data-bs-toggle="modal" data-bs-target="#cvModal">
-                        View CV
-                    </button>
-                </div>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cvModal">
+                            View CV
+                        </button>
+                    </div>
 
-                <!-- SOCIAL ICONS (MOBILE ONLY) -->
-                <div class="about-social d-flex d-lg-none">
-                    <a href="https://www.facebook.com/its.me.eris.buenaventura.22" target="_blank" class="nav-link text-red p-0">
-                        <i class="bi bi-facebook fs-5"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/eris-alyana-buenaventura-1347b034a/" target="_blank" class="nav-link text-red p-0">
-                        <i class="bi bi-linkedin fs-5"></i>
-                    </a>
-                    <a href="https://github.com/ErisBuenaventura" target="_blank" class="nav-link text-red p-0">
-                        <i class="bi bi-github fs-5"></i>
-                    </a>
-                </div>
-            </section>
+                    <!-- SOCIAL ICONS -->
+                    <div class="about-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                    </div>
 
-        <!-- CV MODAL -->
-        <div class="modal fade cv-modal" id="cvModal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+                    <!-- EXPERIENCE GRAPH -->
+                    <div class="about-chart">
+                        <canvas id="experienceChart"></canvas>
+                    </div>
 
-                    <!-- HEADER -->
+                </section>
+
+
+                <!-- CV MODAL -->
+                <div class="modal fade" id="cvModal">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
                     <div class="modal-header">
                         <h5 class="modal-title">My Resume</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
 
-                    <!-- BODY -->
                     <div class="modal-body">
 
-                        <!-- PAPER AREA -->
-                        <div class="cv-paper">
-                            <iframe src="files/resume.pdf"></iframe>
-                        </div>
+                    <div class="cv-paper">
+                        <iframe src="files/resume.pdf"></iframe>
+                    </div>
 
                     </div>
 
-                    <!-- FOOTER -->
                     <div class="modal-footer">
-                        <a href="files/resume.pdf" download="Eris_Buenaventura_Resume.pdf" class="btn btn-outline-red">
-                            <i class="bi bi-download me-1"></i> Download CV
-                        </a>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            <i class="bi bi-x-lg me-1"></i> Close
-                        </button>
+
+                    <a href="files/resume.pdf" download class="btn btn-outline-danger">
+                        <i class="bi bi-download"></i> Download
+                    </a>
+
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                     </div>
 
                 </div>
             </div>
         </div>
+
    
         <div class="section-divider"></div>
 
@@ -494,6 +502,45 @@
         </section>
 
     </section>
+
+        <!-- RIGHT SIDE PANEL -->
+        <aside class="right-panel">
+
+            <div class="panel-card">
+                <h3 class="panel-title">Updates & Upcoming Features</h3>
+
+                <div class="update-item">
+                    <div class="update-icon">🔔</div>
+                    <div class="update-content">
+                        <p class="update-text">Notification improvements</p>
+                        <span class="update-time">This week</span>
+                    </div>
+                </div>
+
+                <div class="update-item">
+                    <div class="update-icon">🧩</div>
+                    <div class="update-content">
+                        <p class="update-text">Griding System Under Development</p>
+                        <span class="update-time">Next Week</span>
+                    </div>
+                </div>
+
+                <div class="update-item">
+                    <div class="update-icon">🎨</div>
+                    <div class="update-content">
+                        <p class="update-text">Page layout improvements</p>
+                        <span class="update-time">Upcoming</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-card">
+                <h3 class="panel-title">Skills Graph</h3>
+                <canvas id="skillsChart"></canvas>
+            </div>
+
+        </aside>
+
     </main>
 
     <!-- Footer --> 
@@ -502,7 +549,7 @@
     </footer>
 
         <!-- Bootstrap JS (with Popper) -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
 
         <!-- Leaflet JS -->
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
