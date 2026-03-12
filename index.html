@@ -6,18 +6,15 @@
   <title>Portfolio</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -104,444 +101,409 @@
 
     <div id="overlay"></div>
 
-    <main class="main-layout">
+<main class="main-layout">
 
-    <!-- LEFT PROFILE PANEL (1/4) -->
+    <!-- LEFT PROFILE PANEL -->
     <aside id="profile" class="profile-panel">
         <img src="files/profile.jpg" class="profile-img" alt="Profile">
-        <h3 class="mt-3">ERIS ALYANA BUENAVENTURA</h3>
-        <p class="text-muted">IT ADMIN</p>
-
-        <div class="profile-info mt-3">
-        <p><i class="bi bi-geo-alt-fill me-2 text-danger"></i>CAA, Las Piñas, Philippines</p>
-        <p><i class="bi bi-briefcase-fill me-2 text-danger"></i>Web Developer</p>
-        <p><i class="bi bi-code-slash me-2 text-danger"></i>Frontend / Backend</p>
+        <h3 class="profile-name">ERIS ALYANA BUENAVENTURA</h3>
+        <p class="profile-role">IT ADMIN</p>
+        <div class="profile-divider"></div>
+        <div class="profile-info">
+        <div class="info-row"><i class="bi bi-geo-alt-fill"></i>CAA, Las Piñas, Philippines</div>
+        <div class="info-row"><i class="bi bi-briefcase-fill"></i>Web Developer</div>
+        <div class="info-row"><i class="bi bi-code-slash"></i>Frontend / Backend</div>
         </div>
     </aside>
 
-    <!-- DIVIDER -->
-    <div class="divider"></div>
+        <!-- CENTER CONTENT PANEL -->
+        <section class="content-panel">
 
-    <!-- RIGHT CONTENT PANEL (3/4) -->
-    <section class="content-panel">
-
-        <!-- ABOUT SECTION -->
+            <!-- ABOUT SECTION -->
             <section id="about">
-                <h1>About Me</h1>
-                    <p>
-                        I am an IT professional with experience in technical support, system maintenance,
-                        and troubleshooting hardware and office systems. I enjoy solving technical
-                        problems, supporting daily IT operations, and continuously learning about
-                        networking and system management.
-                    </p>
+            <h1>About Me</h1>
+            <p>
+                I am an IT professional with experience in technical support, system maintenance, and troubleshooting hardware and office systems.
+            </p>
 
-                    <!-- BUTTONS -->
-                    <div class="about-buttons">
-                        <a href="#skills" class="btn btn-outline-danger">Read More</a>
+            <div class="about-buttons">
+                <a href="#skills" class="btn btn-outline-danger">Read More</a>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cvModal">View CV</button>
+            </div>
 
-                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cvModal">
-                            View CV
-                        </button>
+            <div class="about-social">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-github"></i></a>
+            </div>
+
+            <div class="about-chart">
+                <canvas id="experienceChart"></canvas>
+            </div>
+        </section>
+    
+            <div class="section-divider"></div>
+
+            <section id="skills" class="skills-section fade-section">
+                <h1 class="skills-title"> <i class="bi bi-tools"></i> Skills</h1>
+
+                <!-- FRONTEND -->
+                <div class="skill-category">
+                <h3><i class="bi bi-window"></i> Front-End Development</h3>
+                <div class="marquee">
+                    <div class="skills-row">
+                    <img src="images/html.png" class="skill-icon">
+                    <img src="images/css.png" class="skill-icon">
+                    <img src="images/js.png" class="skill-icon">
+                    <img src="images/bootstrap.png" class="skill-icon">
+                    <img src="images/tailwind.png" class="skill-icon">
+                    <img src="images/ajax.png" class="skill-icon">
+                    <img src="images/reactjs.png" class="skill-icon">
+
+                    <!-- Duplicate for seamless loop -->
+                    <img src="images/html.png" class="skill-icon">
+                    <img src="images/css.png" class="skill-icon">
+                    <img src="images/js.png" class="skill-icon">
+                    <img src="images/bootstrap.png" class="skill-icon">
+                    <img src="images/tailwind.png" class="skill-icon">
+                    <img src="images/ajax.png" class="skill-icon">
+                    <img src="images/reactjs.png" class="skill-icon">
+                    </div>
+                </div>
+                </div>
+
+                <!-- BACKEND -->
+                <div class="skill-category">
+                <h3><i class="bi bi-server"></i> Back-End Development</h3>
+                <div class="marquee">
+                    <div class="skills-row">
+                    <img src="images/php.png" class="skill-icon">
+                    <img src="images/dotnet.png" class="skill-icon">
+                    <img src="images/php.png" class="skill-icon">
+                    <img src="images/dotnet.png" class="skill-icon">
+                    </div>
+                </div>
+                </div>
+
+                <!-- DATABASE -->
+                <div class="skill-category">
+                <h3><i class="bi bi-database"></i> Database Management</h3>
+                    <div class="skill-row">
+                    <img src="images/mysql.png" class="skill-icon">
+                    </div>
+                </div>
+
+                <!-- DEVELOPMENT TOOLS -->
+                <div class="skill-category">
+                <h3><i class="bi bi-code"></i> Development Tools</h3>
+                <div class="marquee">
+                    <div class="skills-row">
+                    <img src="images/vscode.png" class="skill-icon">
+                    <img src="images/xampp.png" class="skill-icon">
+                    <img src="images/github.png" class="skill-icon">
+                    <img src="images/expo.png" class="skill-icon">
+                    <img src="images/android.png" class="skill-icon">
+                    <img src="images/vscode.png" class="skill-icon">
+                    <img src="images/xampp.png" class="skill-icon">
+                    <img src="images/github.png" class="skill-icon">
+                    <img src="images/expo.png" class="skill-icon">
+                    <img src="images/android.png" class="skill-icon">
+                    </div>
+                </div>
+                </div>
+
+                <!-- PRODUCTIVITY TOOLS -->
+                <div class="skill-category">
+                <h3><i class="bi bi-briefcase"></i> Productivity Tools</h3>
+                <div class="marquee">
+                    <div class="skills-row">
+                    <img src="images/office.png" class="skill-icon">
+                    <img src="images/google.png" class="skill-icon">
+                    <img src="images/canva.png" class="skill-icon">
+                    <img src="images/photoshop.png" class="skill-icon">
+                    <img src="images/office.png" class="skill-icon">
+                    <img src="images/google.png" class="skill-icon">
+                    <img src="images/canva.png" class="skill-icon">
+                    <img src="images/photoshop.png" class="skill-icon">
+                    </div>
+                </div>
+                </div>
+
+                <!-- HOSTING -->
+                <div class="skill-category">
+                <h3><i class="bi bi-cloud"></i> Domain & Hosting</h3>
+                <div class="marquee">
+                    <div class="skills-row">
+                    <img src="images/infinityfree.png" class="skill-icon">
+                    <img src="images/crazydomain.png" class="skill-icon">
+                    <img src="images/brevo.png" class="skill-icon">
+                    <img src="images/infinityfree.png" class="skill-icon">
+                    <img src="images/crazydomain.png" class="skill-icon">
+                    <img src="images/brevo.png" class="skill-icon">
+                    </div>
+                </div>
+                </div>
+
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section id="experience" class="experience-section fade-section">
+                <h1 class="animate-title"><i class="bi bi-laptop-fill"></i> Experience</h1>
+
+                <div class="experience-grid">
+
+                    <!-- Experience 1 -->
+                    <div class="experience-card" style="background-image: url('files/saveplus.png');">
+                        <div class="experience-card-header">
+                            <div class="header-content">
+                                <div>
+                                    <h3 class="company">SAVE PLUS LABOR SERVICE COOPERATIVE</h3>
+                                    <p class="position">IT Admin | Technical Support</p>
+                                </div>
+                                <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSavePlus">
+                                    View
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- SOCIAL ICONS -->
-                    <div class="about-social">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-github"></i></a>
+                    <!-- Experience 2 -->
+                    <div class="experience-card" style="background-image: url('files/sbt.png');">
+                        <div class="experience-card-header">
+                            <div class="header-content">
+                                <div>
+                                    <h3 class="company">SUPERIOR BT INC</h3>
+                                    <p class="position">IT Intern Technical support | Web Developer | QA Tester</p>
+                                </div>
+                                <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSBT">
+                                    View
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- EXPERIENCE GRAPH -->
-                    <div class="about-chart">
-                        <canvas id="experienceChart"></canvas>
+                    <!-- Experience 3 -->
+                    <div class="experience-card" style="background-image: url('files/kegg.png');">
+                        <div class="experience-card-header">
+                            <div class="header-content">
+                                <div>
+                                    <h3 class="company">FREELANCE PROJECT</h3>
+                                    <p class="position">Website Developer | Accounting System for K-EGG Business</p>
+                                </div>
+                                <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalKEGG">
+                                    View
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                </section>
+                </div>
+            </section>
 
+            <!-- =====================
+            MODALS
+            ===================== -->
 
-                <!-- CV MODAL -->
-                <div class="modal fade" id="cvModal">
-                    <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal 1: SAVE PLUS -->
+                <div class="modal fade" id="modalSavePlus" tabindex="-1" aria-labelledby="modalSavePlusLabel">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content">
-
-                    <div class="modal-header">
-                        <h5 class="modal-title">My Resume</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalSavePlusLabel">SAVE PLUS LABOR SERVICE COOPERATIVE</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Position:</strong> IT Admin</p>
+                            <p><strong>Duration:</strong> August 2025 - Present</p>
+                            <p><strong>Responsibilities:</strong></p>
+                            <ul>
+                            <li>Configured, installed, and troubleshooted Epson printers for office operations.</li>
+                            <li>Coordinated with partner developers regarding system updates, fixes, and improvements.</li>
+                            <li>Conducted system testing, documented results, and reported technical issues.</li>
+                            <li>Collaborated with the General Manager regarding system updates and operational improvements.</li>
+                            <li>Managed and maintained the Sentry biometric server system for client attendance monitoring.</li>
+                            <li>Provided email and chat support for document processing and technical requests.</li>
+                            </ul>
+                            <p><strong>Location:</strong> Moonwalk, Parañaque City, Philippines</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
                     </div>
 
-                    <div class="modal-body">
-
-                    <div class="cv-paper">
-                        <iframe src="files/resume.pdf"></iframe>
+                    <!-- Modal 2: SBT -->
+                    <div class="modal fade" id="modalSBT" tabindex="-1" aria-labelledby="modalSBTLabel">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalSBTLabel">SUPERIOR BT INC</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Position:</strong> IT Intern</p>
+                            <p><strong>Duration:</strong> February 2025 – June 2025</p>
+                            <p><strong>Responsibilities:</strong></p>
+                            <ul>
+                            <li>Coordinated with supervisor and co-interns on assigned tasks.</li>
+                            <li>Assisted in building websites using HTML, CSS, Bootstrap, Tailwind CSS, and JavaScript.</li>
+                            <li>Performed testing and documentation for WordPress websites.</li>
+                            <li>Used GitHub for collaboration and version control.</li>
+                            <li>Troubleshot Samsung and Brother printers.</li>
+                            <li>Learned basic networking concepts including OSI model and ISP operations.</li>
+                            <li>Performed RJ45 cable crimping and basic PC assembly.</li>
+                            </ul>
+                            <p><strong>Location:</strong> Alabang, Muntinlupa City, Philippines</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
                     </div>
 
-                    </div>
-
-                    <div class="modal-footer">
-
-                    <a href="files/resume.pdf" download class="btn btn-outline-danger">
-                        <i class="bi bi-download"></i> Download
-                    </a>
-
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-   
-        <div class="section-divider"></div>
-
-        <section id="skills" class="skills-section fade-section">
-            <h1 class="skills-title"> <i class="bi bi-tools"></i> Skills</h1>
-
-            <!-- FRONTEND -->
-            <div class="skill-category">
-            <h3><i class="bi bi-window"></i> Front-End Development</h3>
-            <div class="marquee">
-                <div class="skills-row">
-                <img src="images/html.png" class="skill-icon">
-                <img src="images/css.png" class="skill-icon">
-                <img src="images/js.png" class="skill-icon">
-                <img src="images/bootstrap.png" class="skill-icon">
-                <img src="images/tailwind.png" class="skill-icon">
-                <img src="images/ajax.png" class="skill-icon">
-                <img src="images/reactjs.png" class="skill-icon">
-
-                <!-- Duplicate for seamless loop -->
-                <img src="images/html.png" class="skill-icon">
-                <img src="images/css.png" class="skill-icon">
-                <img src="images/js.png" class="skill-icon">
-                <img src="images/bootstrap.png" class="skill-icon">
-                <img src="images/tailwind.png" class="skill-icon">
-                <img src="images/ajax.png" class="skill-icon">
-                <img src="images/reactjs.png" class="skill-icon">
-                </div>
-            </div>
-            </div>
-
-            <!-- BACKEND -->
-            <div class="skill-category">
-            <h3><i class="bi bi-server"></i> Back-End Development</h3>
-            <div class="marquee">
-                <div class="skills-row">
-                <img src="images/php.png" class="skill-icon">
-                <img src="images/dotnet.png" class="skill-icon">
-                <img src="images/php.png" class="skill-icon">
-                <img src="images/dotnet.png" class="skill-icon">
-                </div>
-            </div>
-            </div>
-
-            <!-- DATABASE -->
-            <div class="skill-category">
-            <h3><i class="bi bi-database"></i> Database Management</h3>
-                <div class="skill-row">
-                <img src="images/mysql.png" class="skill-icon">
-                </div>
-            </div>
-
-            <!-- DEVELOPMENT TOOLS -->
-            <div class="skill-category">
-            <h3><i class="bi bi-code"></i> Development Tools</h3>
-            <div class="marquee">
-                <div class="skills-row">
-                <img src="images/vscode.png" class="skill-icon">
-                <img src="images/xampp.png" class="skill-icon">
-                <img src="images/github.png" class="skill-icon">
-                <img src="images/expo.png" class="skill-icon">
-                <img src="images/android.png" class="skill-icon">
-                <img src="images/vscode.png" class="skill-icon">
-                <img src="images/xampp.png" class="skill-icon">
-                <img src="images/github.png" class="skill-icon">
-                <img src="images/expo.png" class="skill-icon">
-                <img src="images/android.png" class="skill-icon">
-                </div>
-            </div>
-            </div>
-
-            <!-- PRODUCTIVITY TOOLS -->
-            <div class="skill-category">
-            <h3><i class="bi bi-briefcase"></i> Productivity Tools</h3>
-            <div class="marquee">
-                <div class="skills-row">
-                <img src="images/office.png" class="skill-icon">
-                <img src="images/google.png" class="skill-icon">
-                <img src="images/canva.png" class="skill-icon">
-                <img src="images/photoshop.png" class="skill-icon">
-                <img src="images/office.png" class="skill-icon">
-                <img src="images/google.png" class="skill-icon">
-                <img src="images/canva.png" class="skill-icon">
-                <img src="images/photoshop.png" class="skill-icon">
-                </div>
-            </div>
-            </div>
-
-            <!-- HOSTING -->
-            <div class="skill-category">
-            <h3><i class="bi bi-cloud"></i> Domain & Hosting</h3>
-            <div class="marquee">
-                <div class="skills-row">
-                <img src="images/infinityfree.png" class="skill-icon">
-                <img src="images/crazydomain.png" class="skill-icon">
-                <img src="images/brevo.png" class="skill-icon">
-                <img src="images/infinityfree.png" class="skill-icon">
-                <img src="images/crazydomain.png" class="skill-icon">
-                <img src="images/brevo.png" class="skill-icon">
-                </div>
-            </div>
-            </div>
-
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section id="experience" class="experience-section fade-section">
-            <h1 class="animate-title"><i class="bi bi-laptop-fill"></i> Experience</h1>
-
-            <div class="experience-grid">
-
-                <!-- Experience 1 -->
-                <div class="experience-card" style="background-image: url('files/saveplus.png');">
-                    <div class="experience-card-header">
-                        <div class="header-content">
-                            <div>
-                                <h3 class="company">SAVE PLUS LABOR SERVICE COOPERATIVE</h3>
-                                <p class="position">IT Admin | Technical Support</p>
-                            </div>
-                            <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSavePlus">
-                                View
-                            </button>
+                    <!-- Modal 3: KEGG -->
+                    <div class="modal fade" id="modalKEGG" tabindex="-1" aria-labelledby="modalKEGGLabel">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalKEGGLabel">K-EGG ACCOUNTING SYSTEM</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Position:</strong> Website Developer</p>
+                            <p><strong>Duration:</strong> June 2025 – July 2025</p>
+                            <p><strong>Tech Stack:</strong> HTML, CSS/Bootstrap, JavaScript, PHP, MySQL</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                            <li>Developed a web-based accounting system for business financial management.</li>
+                            <li>Implemented secure login and authentication for users.</li>
+                            <li>Built Staff and Admin dashboards with role-based access.</li>
+                            <li>Staff module: Manage sales and expense records.</li>
+                            <li>Admin panel: Manage staff accounts, sales and expenses, ledger and journal entries, financial reports, tax computation, staff balances, and data storage.</li>
+                            </ul>
+                            <p><strong>Location:</strong> CAA, Las Piñas City, Philippines</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        
+            <div class="section-divider"></div>
 
-                <!-- Experience 2 -->
-                <div class="experience-card" style="background-image: url('files/sbt.png');">
-                    <div class="experience-card-header">
-                        <div class="header-content">
-                            <div>
-                                <h3 class="company">SUPERIOR BT INC</h3>
-                                <p class="position">IT Intern Technical support | Web Developer | QA Tester</p>
-                            </div>
-                            <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSBT">
-                                View
-                            </button>
+            <section id="contact" class="contact-section fade-section">
+
+            <h1 class="animate-title">
+                <i class="bi bi-briefcase-fill"></i> Contact
+            </h1>
+
+            <div class="contact-wrapper">
+
+                <!-- Full Background Map -->
+                <div id="map"></div>
+
+                <!-- Floating Contact Card -->
+                <div class="contact-card">
+
+                    <!-- Toggle Arrow -->
+                    <div class="card-toggle">
+                        <span id="toggleArrow">&#9650;</span>
+                    </div>
+
+                    <!-- Wrap content for toggle animation -->
+                    <div class="card-content">
+
+                        <div class="card-header">
+                            <h3>Contact Me</h3>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Experience 3 -->
-                <div class="experience-card" style="background-image: url('files/kegg.png');">
-                    <div class="experience-card-header">
-                        <div class="header-content">
-                            <div>
-                                <h3 class="company">FREELANCE PROJECT</h3>
-                                <p class="position">Website Developer | Accounting System for K-EGG Business</p>
-                            </div>
-                            <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalKEGG">
-                                View
-                            </button>
+                        <div class="card-info">
+                            <p><strong>Email:</strong><br> erisbuenaventura22@gmail.com</p>
+                            <p><strong>Phone:</strong><br> 0977-171-4009</p>
+                            <p><strong>Location:</strong><br> Las Piñas City, Philippines</p>
                         </div>
-                    </div>
-                </div>
 
-            </div>
-        </section>
+                        <div class="card-social">
+                            <a href="https://www.facebook.com/its.me.eris.buenaventura.22" target="_blank">Facebook</a>
+                            <a href="https://github.com/ErisBuenaventura" target="_blank">GitHub</a>
+                            <a href="https://www.linkedin.com/in/eris-alyana-buenaventura-1347b034a/" target="_blank">LinkedIn</a>
+                        </div>
 
-        <!-- =====================
-        MODALS
-        ===================== -->
+                        <div class="card-form">
+                            <h4>Send a Message</h4>
+                            <form action="https://formspree.io/f/mwvnbeyj" method="POST">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                                <input type="email" name="_replyto" placeholder="Your Email" required>
+                                <textarea name="message" placeholder="Your Message" required></textarea>
+                                <button type="submit">Send Message</button>
+                            </form>
+                        </div>
 
-        <!-- Modal 1: SAVE PLUS -->
-        <div class="modal fade" id="modalSavePlus" tabindex="-1" aria-labelledby="modalSavePlusLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalSavePlusLabel">SAVE PLUS LABOR SERVICE COOPERATIVE</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Position:</strong> IT Admin</p>
-                    <p><strong>Duration:</strong> August 2025 - Present</p>
-                    <p><strong>Responsibilities:</strong></p>
-                    <ul>
-                    <li>Configured, installed, and troubleshooted Epson printers for office operations.</li>
-                    <li>Coordinated with partner developers regarding system updates, fixes, and improvements.</li>
-                    <li>Conducted system testing, documented results, and reported technical issues.</li>
-                    <li>Collaborated with the General Manager regarding system updates and operational improvements.</li>
-                    <li>Managed and maintained the Sentry biometric server system for client attendance monitoring.</li>
-                    <li>Provided email and chat support for document processing and technical requests.</li>
-                    </ul>
-                    <p><strong>Location:</strong> Moonwalk, Parañaque City, Philippines</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-            </div>
+                    </div> <!-- end card-content -->
 
-            <!-- Modal 2: SBT -->
-            <div class="modal fade" id="modalSBT" tabindex="-1" aria-labelledby="modalSBTLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalSBTLabel">SUPERIOR BT INC</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Position:</strong> IT Intern</p>
-                    <p><strong>Duration:</strong> February 2025 – June 2025</p>
-                    <p><strong>Responsibilities:</strong></p>
-                    <ul>
-                    <li>Coordinated with supervisor and co-interns on assigned tasks.</li>
-                    <li>Assisted in building websites using HTML, CSS, Bootstrap, Tailwind CSS, and JavaScript.</li>
-                    <li>Performed testing and documentation for WordPress websites.</li>
-                    <li>Used GitHub for collaboration and version control.</li>
-                    <li>Troubleshot Samsung and Brother printers.</li>
-                    <li>Learned basic networking concepts including the Open Systems Interconnection model and Internet Service Provider (ISP) operations.</li>
-                    <li>Performed RJ45 cable crimping and basic PC assembly.</li>
-                    </ul>
-                    <p><strong>Location:</strong> Alabang, Muntinlupa City, Philippines</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-            </div>
+                </div> <!-- end contact-card -->
 
-            <!-- Modal 3: KEGG -->
-            <div class="modal fade" id="modalKEGG" tabindex="-1" aria-labelledby="modalKEGGLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalKEGGLabel">K-EGG ACCOUNTING SYSTEM</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Position:</strong> Website Developer</p>
-                    <p><strong>Duration:</strong> June 2025 – July 2025</p>
-                    <p><strong>Tech Stack:</strong> HTML, CSS/Bootstrap, JavaScript, PHP, MySQL</p>
-                    <p><strong>Key Features:</strong></p>
-                    <ul>
-                    <li>Developed a web-based accounting system for business financial management.</li>
-                    <li>Implemented secure login and authentication for users.</li>
-                    <li>Built Staff and Admin dashboards with role-based access.</li>
-                    <li>Staff module: Manage sales and expense records.</li>
-                    <li>Admin panel: Manage staff accounts, sales and expenses, ledger and journal entries, financial reports, tax computation, staff balances, and data storage.</li>
-                    </ul>
-                    <p><strong>Location:</strong> CAA, Las Piñas City, Philippines</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-        </div>
-     
-        <div class="section-divider"></div>
+            </div> <!-- end contact-wrapper -->
 
-        <section id="contact" class="contact-section fade-section">
-
-        <h1 class="animate-title">
-            <i class="bi bi-briefcase-fill"></i> Contact
-        </h1>
-
-        <div class="contact-wrapper">
-
-            <!-- Full Background Map -->
-            <div id="map"></div>
-
-            <!-- Floating Contact Card -->
-            <div class="contact-card">
-
-                <!-- Toggle Arrow -->
-                <div class="card-toggle">
-                    <span id="toggleArrow">&#9650;</span>
-                </div>
-
-                <!-- Wrap content for toggle animation -->
-                <div class="card-content">
-
-                    <div class="card-header">
-                        <h3>Contact Me</h3>
-                    </div>
-
-                    <div class="card-info">
-                        <p><strong>Email:</strong><br> erisbuenaventura22@gmail.com</p>
-                        <p><strong>Phone:</strong><br> 0977-171-4009</p>
-                        <p><strong>Location:</strong><br> Las Piñas City, Philippines</p>
-                    </div>
-
-                    <div class="card-social">
-                        <a href="https://www.facebook.com/its.me.eris.buenaventura.22" target="_blank">Facebook</a>
-                        <a href="https://github.com/ErisBuenaventura" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/in/eris-alyana-buenaventura-1347b034a/" target="_blank">LinkedIn</a>
-                    </div>
-
-                    <div class="card-form">
-                        <h4>Send a Message</h4>
-                        <form action="https://formspree.io/f/mwvnbeyj" method="POST">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="_replyto" placeholder="Your Email" required>
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                            <button type="submit">Send Message</button>
-                        </form>
-                    </div>
-
-                </div> <!-- end card-content -->
-
-            </div> <!-- end contact-card -->
-
-        </div> <!-- end contact-wrapper -->
+            </section>
 
         </section>
 
-    </section>
-
-        <!-- RIGHT SIDE PANEL -->
+        <!-- RIGHT PANEL -->
         <aside class="right-panel">
-
-            <div class="panel-card">
-                <h3 class="panel-title">Updates & Upcoming Features</h3>
-
-                <div class="update-item">
-                    <div class="update-icon">🔔</div>
-                    <div class="update-content">
-                        <p class="update-text">Notification improvements</p>
-                        <span class="update-time">This week</span>
-                    </div>
-                </div>
-
-                <div class="update-item">
-                    <div class="update-icon">🧩</div>
-                    <div class="update-content">
-                        <p class="update-text">Griding System Under Development</p>
-                        <span class="update-time">Next Week</span>
-                    </div>
-                </div>
-
-                <div class="update-item">
-                    <div class="update-icon">🎨</div>
-                    <div class="update-content">
-                        <p class="update-text">Page layout improvements</p>
-                        <span class="update-time">Upcoming</span>
-                    </div>
+            <div class="panel-card notifications-card">
+            <div class="notifications-header"><i class="fas fa-bell notification-icon"></i>Notifications</div>
+            <div class="update-item">
+                <div class="update-icon"><i class="fas fa-bell"></i></div>
+                <div class="update-content">
+                <p class="update-text">Notification and skills graph improvements</p>
+                <span class="update-time">Under Development</span>
                 </div>
             </div>
+            <div class="update-item">
+                <div class="update-icon"><i class="fas fa-paint-brush"></i></div>
+                <div class="update-content">
+                <p class="update-text">Page layout improvements</p>
+                <span class="update-time">Upcoming</span>
+                </div>
+            </div>
+            </div>
 
-            <div class="panel-card">
-                <h3 class="panel-title">Skills Graph</h3>
+            <div class="panel-card chart-card">
+            <div class="chart-header"><i class="fas fa-chart-line"></i>Skills Graph</div>
+            <div class="chart-container">
                 <canvas id="skillsChart"></canvas>
             </div>
-
+            </div>
         </aside>
 
-    </main>
+</main>
+
+<!-- CV Modal -->
+<div class="modal fade cv-modal" id="cvModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">My Resume</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="cv-paper">
+          <iframe src="files/resume.pdf"></iframe>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="files/resume.pdf" download class="btn btn-outline-danger"><i class="bi bi-download"></i> Download</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Footer --> 
     <footer class="text-center py-1">

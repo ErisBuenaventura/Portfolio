@@ -147,23 +147,24 @@ marquees.forEach(row => {
 /* ===============================
    ABOUT SECTION
 =============================== */
-const ctx = document.getElementById('skillsChart').getContext('2d');
-const skillsChart = new Chart(ctx, {
+const ctx = document.getElementById('skillsChart');
+
+new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
+        labels: ['HTML','CSS','JS','PHP','MYSQL'],
         datasets: [{
             label: 'Skill Level',
-            data: [90, 85, 80, 75, 70],
-            borderColor: 'rgba(255, 76, 76, 1)',
-            backgroundColor: 'rgba(255, 76, 76, 0.2)',
-            fill: true,
-            tension: 0.3
+            data: [90,85,70,75,80],
+            borderColor: '#e63946',
+            backgroundColor: 'rgba(230,57,70,0.15)',
+            tension: 0.4,
+            fill:true
         }]
     },
-    options: {
-        responsive: true,
-        plugins: { legend: { display: true } },
-        scales: { y: { beginAtZero: true, max: 100 } }
+    options:{
+        plugins:{
+            legend:{display:false}
+        }
     }
 });
