@@ -103,44 +103,44 @@
 
 <main class="main-layout">
 
-    <!-- LEFT PROFILE PANEL -->
-    <aside id="profile" class="profile-panel">
-        <img src="files/profile.jpg" class="profile-img" alt="Profile">
-        <h3 class="profile-name">ERIS ALYANA BUENAVENTURA</h3>
-        <p class="profile-role">IT ADMIN</p>
-        <div class="profile-divider"></div>
-        <div class="profile-info">
-        <div class="info-row"><i class="bi bi-geo-alt-fill"></i>CAA, Las Piñas, Philippines</div>
-        <div class="info-row"><i class="bi bi-briefcase-fill"></i>Web Developer</div>
-        <div class="info-row"><i class="bi bi-code-slash"></i>Frontend / Backend</div>
-        </div>
-    </aside>
-
-        <!-- CENTER CONTENT PANEL -->
-        <section class="content-panel">
-
-            <!-- ABOUT SECTION -->
-            <section id="about">
-            <h1>About Me</h1>
-            <p>
-                I am an IT professional with experience in technical support, system maintenance, and troubleshooting hardware and office systems.
-            </p>
-
-            <div class="about-buttons">
-                <a href="#skills" class="btn btn-outline-danger">Read More</a>
-                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cvModal">View CV</button>
+        <!-- LEFT PROFILE PANEL -->
+        <aside id="profile" class="profile-panel fade-section">
+            <img src="files/profile.jpg" class="profile-img" alt="Profile">
+            <h3 class="profile-name">ERIS ALYANA BUENAVENTURA</h3>
+            <p class="profile-role">IT ADMIN</p>
+            <div class="profile-divider"></div>
+            <div class="profile-info">
+            <div class="info-row"><i class="bi bi-geo-alt-fill"></i>CAA, Las Piñas, Philippines</div>
+            <div class="info-row"><i class="bi bi-briefcase-fill"></i>Web Developer</div>
+            <div class="info-row"><i class="bi bi-code-slash"></i>Frontend / Backend</div>
             </div>
+        </aside>
 
-            <div class="about-social">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-                <a href="#"><i class="bi bi-github"></i></a>
-            </div>
+            <!-- CENTER CONTENT PANEL -->
+            <section class="content-panel">
 
-            <div class="about-chart">
-                <canvas id="experienceChart"></canvas>
-            </div>
-        </section>
+                <!-- ABOUT SECTION -->
+                <section id="about" class="about-section fade-section">
+                <h1>About Me</h1>
+                <p>
+                    I am an IT professional with experience in technical support, system maintenance, and troubleshooting hardware and office systems.
+                </p>
+
+                <div class="about-buttons">
+                    <a href="#skills" class="btn btn-outline-danger">Read More</a>
+                    <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cvModal">View CV</button>
+                </div>
+
+                <div class="about-social">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-github"></i></a>
+                </div>
+
+                <div class="about-chart">
+                    <canvas id="experienceChart"></canvas>
+                </div>
+            </section>
     
             <div class="section-divider"></div>
 
@@ -259,7 +259,7 @@
                             <div class="header-content">
                                 <div>
                                     <h3 class="company">SAVE PLUS LABOR SERVICE COOPERATIVE</h3>
-                                    <p class="position">IT Admin | Technical Support</p>
+                                    <p class="position">IT Admin</p>
                                 </div>
                                 <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSavePlus">
                                     View
@@ -274,7 +274,7 @@
                             <div class="header-content">
                                 <div>
                                     <h3 class="company">SUPERIOR BT INC</h3>
-                                    <p class="position">IT Intern Technical support | Web Developer | QA Tester</p>
+                                    <p class="position">IT Intern</p>
                                 </div>
                                 <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSBT">
                                     View
@@ -288,8 +288,8 @@
                         <div class="experience-card-header">
                             <div class="header-content">
                                 <div>
-                                    <h3 class="company">FREELANCE PROJECT</h3>
-                                    <p class="position">Website Developer | Accounting System for K-EGG Business</p>
+                                    <h3 class="company">K-EGG ACCOUNTING SYSTEM</h3>
+                                    <p class="position">Freelancing</p>
                                 </div>
                                 <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalKEGG">
                                     View
@@ -484,26 +484,24 @@
 
 </main>
 
-<!-- CV Modal -->
-<div class="modal fade cv-modal" id="cvModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">My Resume</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="cv-paper">
-          <iframe src="files/resume.pdf"></iframe>
+        <!-- CV Modal -->
+        <div class="modal fade cv-modal" id="cvModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">My Resume</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <iframe src="files/resume.pdf"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a href="files/resume.pdf" download class="btn btn-outline-danger"><i class="bi bi-download"></i> Download</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <a href="files/resume.pdf" download class="btn btn-outline-danger"><i class="bi bi-download"></i> Download</a>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>
 
     <!-- Footer --> 
     <footer class="text-center py-1">

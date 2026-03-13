@@ -152,19 +152,30 @@ const ctx = document.getElementById('skillsChart');
 new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['HTML','CSS','JS','PHP','MYSQL'],
+        labels: ['Frontend', 'Backend', 'MySQL', 'SQA', 'Development Tools'],
         datasets: [{
             label: 'Skill Level',
-            data: [90,85,70,75,80],
+            data: [90, 80, 70, 95, 100],
             borderColor: '#e63946',
             backgroundColor: 'rgba(230,57,70,0.15)',
             tension: 0.4,
-            fill:true
+            fill: true
         }]
     },
-    options:{
-        plugins:{
-            legend:{display:false}
+    options: {
+        scales: {
+            y: {
+                min: 0,
+                max: 100,
+                ticks: {
+                    callback: function(value) {
+                        return value + '%';
+                    }
+                }
+            }
+        },
+        plugins: {
+            legend: { display: false }
         }
     }
 });
