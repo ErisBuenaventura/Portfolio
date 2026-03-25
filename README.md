@@ -1,4 +1,5 @@
-[![Portfolio Screenshot](https://github.com/user-attachments/assets/2580d083-ec93-457c-b65c-5848aa8822eb)](https://erisbuenaventura.github.io/Portfolio/)
-[![Portfolio Screenshot](https://github.com/user-attachments/assets/f4538057-b972-40c2-b3f5-4ba2bda49777)](https://erisbuenaventura.github.io/Portfolio/)
-
+[![Portfolio Screenshot](https://github.com/user-attachments/assets/4e3b27de-8bbf-4e2f-b19f-7abbc48431f3)](https://erisbuenaventura.github.io/Portfolio/)
+[![Portfolio Screenshot](https://github.com/user-attachments/assets/3b73f87a-5e40-4af6-b09b-01e286e3c1fa)](https://erisbuenaventura.github.io/Portfolio/)
+[![Portfolio Screenshot](https://github.com/user-attachments/assets/fbd63e78-d1ae-47f3-92d9-e3e163136123)](https://erisbuenaventura.github.io/Portfolio/)
+[![Portfolio Screenshot](https://github.com/user-attachments/assets/ba31ea68-3e0f-4053-b07e-b8896d12e952)](https://erisbuenaventura.github.io/Portfolio/)
 
