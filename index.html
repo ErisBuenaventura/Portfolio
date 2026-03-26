@@ -453,30 +453,36 @@
         </section>
 
         <!-- RIGHT PANEL -->
-        <aside class="right-panel">
-            <div class="panel-card notifications-card">
-            <div class="notifications-header"><i class="fas fa-bell notification-icon"></i>Notifications</div>
-            <div class="update-item">
-                <div class="update-icon"><i class="fas fa-bell"></i></div>
-                <div class="update-content">
-                <p class="update-text">Notification and skills graph improvements</p>
-                <span class="update-time">Under Development</span>
+        <aside class="right-panel-new">
+            <!-- NOTIFICATIONS -->
+            <div class="notifications-new">
+                <div class="notifications-header-new">
+                    <i class="fas fa-bell notification-icon-new"></i> Notifications
                 </div>
-            </div>
-            <div class="update-item">
-                <div class="update-icon"><i class="fas fa-paint-brush"></i></div>
-                <div class="update-content">
-                <p class="update-text">Page layout improvements</p>
-                <span class="update-time">Upcoming</span>
-                </div>
-            </div>
+                <ul class="notification-list">
+                    <li class="notification-item">
+                        <span class="notification-dot"></span>
+                        <div class="notification-text">
+                            <p class="notification-title">Notification and skills graph improvements</p>
+                            <span class="notification-time">Under Development</span>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <span class="notification-dot" style="background:#e63946;"></span>
+                        <div class="notification-text">
+                            <p class="notification-title">Page layout improvements</p>
+                            <span class="notification-time">Upcoming</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
-            <div class="panel-card chart-card">
-            <div class="chart-header"><i class="fas fa-chart-line"></i>Skills Graph</div>
-            <div class="chart-container">
-                <canvas id="skillsChart"></canvas>
-            </div>
+            <!-- SKILLS GRAPH -->
+            <div class="skills-graph-new">
+                <div class="chart-header-new"><i class="fas fa-chart-line"></i> Skills Graph</div>
+                <div class="chart-wrapper">
+                    <canvas id="skillsChart"></canvas>
+                </div>
             </div>
         </aside>
 

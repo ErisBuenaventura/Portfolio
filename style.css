@@ -124,18 +124,18 @@ h1 {
 
   display: flex;
   flex-direction: column;
-  align-items: center;       /* horizontal center */
-  justify-content: flex-start; 
-  gap: 2rem;                 /* more breathing space */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
   text-align: center;
 
   min-height: 100vh;
   position: sticky;
   top: 0;
 
-  box-shadow: 2px 0 20px rgba(0,0,0,0.08); /* subtle depth */
-  border-radius: 0 15px 15px 0;            /* smoother modern look */
-  transition: all 0.3s ease;
+  /* removed card look */
+  box-shadow: none;
+  border-radius: 0;
 }
 
 /* Dark mode */
@@ -180,7 +180,7 @@ body.dark-mode #profile {
   margin-bottom: 0.7rem;
 }
 
-/* Divider */
+/* KEEPING YOUR ORIGINAL DIVIDER */
 #profile .profile-divider {
   width: 60%;
   height: 2px;
@@ -205,7 +205,6 @@ body.dark-mode #profile {
   font-size: 0.95rem;
   border-radius: 8px;
   transition: background 0.25s ease, transform 0.2s ease;
-  cursor: default;
 }
 
 #profile .info-row i {
@@ -228,8 +227,10 @@ body.dark-mode #profile {
     min-height: auto;
     margin: 3rem auto 0;
     border-right: none;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+
+    /* remove card look */
+    border-radius: 0;
+    box-shadow: none;
   }
 
   #profile .profile-info {
@@ -250,124 +251,208 @@ body.dark-mode #profile {
 }
 
 /* =====================
-   RIGHT PANEL
+   RIGHT PANEL NEW DESIGN
 ===================== */
-.right-panel{
-  width:20%;
-  min-width:230px;
-
-  padding:4rem 1.2rem 1.2rem; /* top spacing */
-
-  background:var(--white);
-  border-left:2px solid var(--red);
-
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
-
-  min-height:100vh;   /* full height desktop */
-
-  position:sticky;
-  top:0;
+.right-panel-new {
+    width: 22%;
+    min-width: 260px;
+    padding: 3rem 1.5rem;
+    background: #fdfdfd;
+    border-left: 3px solid #e63946;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
 }
 
-body.dark-mode .right-panel{
-  background:var(--black);
+/* DARK MODE */
+body.dark-mode .right-panel-new {
+    background: #121212;
 }
 
-/* PANEL CARD */
-.panel-card{
-  background:var(--card-bg-light);
-  color:var(--card-text-light);
-  border-radius:12px;
-  padding:1rem;
-  box-shadow:var(--shadow-light);
-  border:1px solid var(--border);
-  transition:.2s ease;
-}
-.panel-card:hover{transform:translateY(-2px);}
-body.dark-mode .panel-card{
-  background:var(--card-bg-dark);
-  color:var(--card-text-dark);
-  box-shadow:var(--shadow-dark);
+/* =====================
+   NOTIFICATIONS
+===================== */
+.notifications-new {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
-/* HEADERS */
-.notifications-header,.chart-header{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-bottom:.8rem;
-  color:var(--text);
+body.dark-mode .notifications-new {
+    background: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
-.notification-icon{color:var(--red);}
-body.dark-mode .notifications-header,
-body.dark-mode .chart-header{color:var(--card-text-dark);}
 
-/* UPDATES */
-.update-item{
-  display:flex;
-  gap:8px;
-  padding:8px;
-  border-radius:8px;
-  transition:.2s;
-  margin-bottom:6px;
-  cursor:pointer;
+.notifications-header-new {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
 }
-.update-item:hover{background:rgba(230,57,70,0.08);}
-.update-icon{
-  width:30px;
-  height:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:6px;
-  background:rgba(230,57,70,0.15);
-  color:var(--red);
-  font-size:13px;
-}
-.update-text{
-  margin:0;
-  font-weight:500;
-  font-size:.85rem;
-  color:var(--text);
-}
-.update-time{font-size:.7rem;color:gray;}
-body.dark-mode .update-text{color:var(--card-text-dark);}
 
-/* CHART */
-.chart-container{
-  padding:6px;
-  background:rgba(0,0,0,0.02);
-  border-radius:8px;
+body.dark-mode .notifications-header-new {
+    color: #eee;
+    border-bottom: 1px solid #333;
 }
-body.dark-mode .chart-container{background:rgba(255,255,255,0.05);}
-#skillsChart{width:100%;height:200px;}
 
-/* MOBILE FIX */
-@media(max-width:992px){
-  .right-panel{
-    width:90%;
-    max-width:600px;
-    margin:1rem auto;
-    border-left:2px solid var(--red);
-    min-height:50vh;      /* half height mobile */
+.notification-icon-new {
+    color: #e63946;
+}
+
+.notification-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0.5rem 0;
+}
+
+.notification-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffb703;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.notification-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.notification-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #222;
+}
+
+.notification-time {
+    font-size: 0.75rem;
+    color: gray;
+}
+
+body.dark-mode .notification-title {
+    color: #ddd;
+}
+
+/* =====================
+   SKILLS GRAPH
+===================== */
+.skills-graph-new {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+body.dark-mode .skills-graph-new {
+    background: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.chart-header-new {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.8rem;
+}
+
+body.dark-mode .chart-header-new {
+    color: #ddd;
+}
+
+.chart-wrapper {
+    width: 100%;
+}
+
+#skillsChart {
+    width: 100%;
+    height: 200px;
+}
+
+/* MOBILE */
+@media(max-width:992px) {
+  .right-panel-new {
+    width: 90%;
+    max-width: 600px;
+    padding: 1.5rem 0;
+    min-height: auto;
+    margin: 1rem auto 0;
+
+    /* remove card look */
+    border-left: none;
+    border-radius: 0;
+    box-shadow: none;
   }
-  .panel-card{
-    width:100%;
-    margin:0 auto;
-    border:none!important;
+
+  /* Notifications */
+  .notifications-new {
+    padding: 0;
+    border-radius: 0;
   }
-  .update-item{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:.5rem;
+
+  .notifications-header-new {
+    border-bottom: none; /* remove divider */
+    padding-bottom: 0;
   }
-  .chart-container{
-    width:100%;
-    max-width:600px;
-    margin:0 auto;
+
+  .notification-list {
+    gap: 6px;
+  }
+
+  .notification-item {
+    gap: 8px;
+    padding: 6px 0;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .notification-text,
+  .notification-title,
+  .notification-time {
+    text-align: left;
+  }
+
+  /* Skills Graph */
+  .skills-graph-new {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .chart-wrapper {
+    width: 100%;
+  }
+
+  #skillsChart {
+    width: 100%;
+    height: 200px;
   }
 }
 
