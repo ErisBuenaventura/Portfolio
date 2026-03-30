@@ -103,18 +103,40 @@
 
 <main class="main-layout">
 
-        <!-- LEFT PROFILE PANEL -->
-        <aside id="profile" class="profile-panel fade-section">
-            <img src="files/profile.jpg" class="profile-img" alt="Profile">
-            <h3 class="profile-name">ERIS ALYANA BUENAVENTURA</h3>
-            <p class="profile-role">IT ADMIN</p>
-            <div class="profile-divider"></div>
-            <div class="profile-info">
-            <div class="info-row"><i class="bi bi-geo-alt-fill"></i>CAA, Las Piñas, Philippines</div>
-            <div class="info-row"><i class="bi bi-briefcase-fill"></i>Web Developer</div>
-            <div class="info-row"><i class="bi bi-code-slash"></i>Frontend / Backend</div>
-            </div>
-        </aside>
+            <!-- LEFT PROFILE PANEL -->
+            <aside id="profile" class="profile-panel fade-section">
+
+                <div class="profile-top">
+                    <div class="profile-avatar">
+                        <img src="files/profile.jpg" alt="Profile">
+                    </div>
+
+                    <h2 class="profile-name">ERIS ALYANA BUENAVENTURA</h2>
+                    <p class="profile-role">Full Stack Web Developer</p>
+                </div>
+
+                <div class="profile-divider"></div>
+
+                <div class="profile-cards">
+
+                    <div class="profile-card">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Las Piñas, Philippines</span>
+                    </div>
+
+                    <div class="profile-card">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <span>IT Administrator</span>
+                    </div>
+
+                    <div class="profile-card">
+                        <i class="bi bi-code-slash"></i>
+                        <span>Frontend / Backend Developer</span>
+                    </div>
+
+                </div>
+
+            </aside>
 
             <!-- CENTER CONTENT PANEL -->
             <section class="content-panel">
@@ -470,7 +492,7 @@
                     <li class="notification-item">
                         <span class="notification-dot" style="background:#e63946;"></span>
                         <div class="notification-text">
-                            <p class="notification-title">Page layout improvements</p>
+                            <p class="notification-title">About Me Page layout improvements</p>
                             <span class="notification-time">Upcoming</span>
                         </div>
                     </li>
@@ -492,17 +514,30 @@
         <div class="modal fade cv-modal" id="cvModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+
             <div class="modal-header">
                 <h5 class="modal-title">My Resume</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
+
             <div class="modal-body">
-                <iframe src="files/resume.pdf"></iframe>
+                <iframe 
+                src="files/resume.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                width="100%" 
+                height="100%" 
+                style="border:none;">
+                </iframe>
             </div>
+
             <div class="modal-footer">
-                <a href="files/resume.pdf" download class="btn btn-outline-danger"><i class="bi bi-download"></i> Download</a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="files/resume.pdf" download class="btn btn-outline-danger">
+                <i class="bi bi-download"></i> Download
+                </a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+                </button>
             </div>
+
             </div>
         </div>
         </div>

@@ -112,142 +112,173 @@ h1 {
   text-align: left;        /* default alignment */
 }
 
-/* =====================
-   PROFILE PANEL LEFT
-==================== */
-#profile {
-  width: 20%;
-  min-width: 230px;
-  padding: 4rem 1.5rem 2rem;
-  background: var(--white);
-  border-right: 2px solid var(--red);
+/* =========================
+   NEW PROFILE PANEL DESIGN
+========================= */
 
+#profile {
+    width: 22%;
+    min-width: 260px;
+    padding: 3rem 1.5rem;
+    background: #fdfdfd;
+    border-right: 3px solid #e63946;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.profile-divider {
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #e63946, transparent);
+    margin: 15px auto; /* this centers it */
+    border-radius: 2px;
+}
+
+/* DARK MODE */
+body.dark-mode #profile {
+  background: linear-gradient(180deg, #0e0e0e 0%, #121212 100%);
+  border-right: 2px solid var(--red);
+}
+
+/* =========================
+   TOP SECTION
+========================= */
+
+.profile-top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
-  text-align: center;
-
-  min-height: 100vh;
-  position: sticky;
-  top: 0;
-
-  /* removed card look */
-  box-shadow: none;
-  border-radius: 0;
+  gap: 1.3rem;
 }
 
-/* Dark mode */
-body.dark-mode #profile {
-  background: var(--black);
-  color: var(--white);
-}
-
-/* Profile Image */
-#profile .profile-img {
+/* PROFILE IMAGE */
+.profile-avatar {
   width: 140px;
   height: 140px;
   border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(45deg, var(--red), #ff4b4b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--red);
-  padding: 3px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s ease;
 }
 
-#profile .profile-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255,0,0,0.35);
+.profile-avatar img:hover {
+  transform: scale(1.07);
 }
 
-/* Profile Name */
-#profile .profile-name {
-  font-size: 1.2rem;
+/* NAME */
+.profile-name {
+  font-size: 1.4rem;
   font-weight: 700;
+  letter-spacing: 1px;
   color: var(--text-primary);
-  margin-top: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-/* Role / Subtitle */
-#profile .profile-role {
-  font-size: 0.9rem;
+/* ROLE */
+.profile-role {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
   color: gray;
-  margin-bottom: 0.7rem;
 }
 
-/* KEEPING YOUR ORIGINAL DIVIDER */
-#profile .profile-divider {
+/* DIVIDER */
+.profile-divider {
   width: 60%;
   height: 2px;
   background: linear-gradient(to right, transparent, var(--red), transparent);
-  margin: 12px 0;
-  border-radius: 1px;
 }
 
-/* Info section */
-#profile .profile-info {
+/* =========================
+   INFO CARDS
+========================= */
+
+.profile-cards {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
-#profile .info-row {
+/* CARD */
+.profile-card {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 12px;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  transition: background 0.25s ease, transform 0.2s ease;
+  padding: 12px 14px;
+
+  background: #ffffff;
+  border-radius: 10px;
+
+  font-size: 0.92rem;
+  font-weight: 500;
+
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-#profile .info-row i {
+/* DARK MODE CARD */
+body.dark-mode .profile-card {
+  background: #1a1a1a;
+  box-shadow: none;
+}
+
+/* ICON */
+.profile-card i {
   color: var(--red);
-  min-width: 20px;
-  text-align: center;
+  font-size: 1.1rem;
+  min-width: 22px;
 }
 
-#profile .info-row:hover {
-  background: rgba(255,0,0,0.08);
-  transform: translateX(2px);
+/* HOVER EFFECT */
+.profile-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 18px rgba(255,0,0,0.15);
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE VERSION
+========================= */
+
 @media(max-width:992px) {
+
   #profile {
     width: 90%;
     max-width: 320px;
-    padding: 3rem 1.5rem 2rem;
-    min-height: auto;
-    margin: 3rem auto 0;
+    height: auto;
+    margin: 2.5rem auto;
     border-right: none;
-
-    /* remove card look */
-    border-radius: 0;
-    box-shadow: none;
   }
 
-  #profile .profile-info {
-    align-items: center;
-  }
-
-  #profile .info-row {
-    justify-content: center;
-    gap: 8px;
-    padding: 8px 10px;
-    font-size: 0.85rem;
-  }
-
-  #profile .profile-img {
+  .profile-avatar {
     width: 120px;
     height: 120px;
   }
+
+  .profile-name {
+    font-size: 1.2rem;
+  }
+
+  .profile-card {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
 }
 
 /* =====================
@@ -478,35 +509,115 @@ section{
 }
 
 /* =====================
-   ABOUT SECTION
+   ABOUT SECTION (COMPACT)
 ===================== */
 #about{
   display:flex;
   flex-direction:column;
-  justify-content:center;   /* vertical center */
-  align-items:flex-start;   /* left align */
-  padding:4% 8%;
-  height:100vh;
+  align-items:flex-start;
+  gap:1rem;
+
+  padding:3rem 7%;
   background:var(--bg);
   color:var(--text-primary);
+
+  height:auto;       /* remove full screen height */
+  min-height:auto;   /* make it compact */
 }
 
-#about h1::after {
-  content:''; display:block; width:60px; height:4px; background:var(--red); margin-top:.5rem; border-radius:2px;
+/* Title */
+#about h1{
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:.3rem;
 }
-#about p {
-  font-size:1.1rem; line-height:1.6; color:var(--text-secondary); max-width:700px; text-align:left; margin-bottom:.5rem;
+
+#about h1::after{
+  content:'';
+  display:block;
+  width:55px;
+  height:4px;
+  background:var(--red);
+  margin-top:6px;
+  border-radius:2px;
 }
-.about-buttons, .about-social {
-  display:flex; gap:.5rem; margin-bottom:.5rem;
+
+/* Paragraph */
+#about p{
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--text-secondary);
+  max-width:650px;
+  margin-bottom:.5rem;
 }
-.about-buttons .btn {
-  font-size:1rem; padding:.5rem 1rem; border-radius:50px; border:2px solid var(--red);
-  background:transparent; color:var(--red); font-weight:600; transition:.3s;
+
+/* Buttons */
+.about-buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:.5rem;
 }
-.about-buttons .btn:hover { background:var(--red); color:#fff; transform:translateY(-2px); }
-.about-social a { font-size:1.2rem; color:var(--text-secondary); transition:.3s; }
-.about-social a:hover { color:var(--red); transform:scale(1.2); }
+
+.about-buttons .btn{
+  font-size:.9rem;
+  padding:6px 14px;
+  border-radius:40px;
+  border:2px solid var(--red);
+  background:transparent;
+  color:var(--red);
+  font-weight:600;
+  transition:.25s ease;
+}
+
+.about-buttons .btn:hover{
+  background:var(--red);
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* Social Icons */
+.about-social{
+  display:flex;
+  gap:12px;
+  margin-bottom:.7rem;
+}
+
+.about-social a{
+  font-size:1.2rem;
+  color:var(--text-secondary);
+  transition:.25s ease;
+}
+
+.about-social a:hover{
+  color:var(--red);
+  transform:scale(1.15);
+}
+
+/* Chart (compact) */
+.about-chart{
+  max-width:300px;
+  margin-top:8px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  #about{
+    padding:2.5rem 5%;
+  }
+
+  #about h1{
+    font-size:1.6rem;
+  }
+
+  #about p{
+    font-size:.95rem;
+  }
+
+  .about-chart{
+    max-width:100%;
+  }
+}
 
 /* =====================
    CV MODAL FIX
@@ -544,35 +655,6 @@ section{
   border: none;
   display: block;
   border-radius: 0;
-}
-
-/* =====================
-   MOBILE FIX
-==================== */
-@media (max-width: 768px) {
-  .cv-modal .modal-dialog {
-    width: 95% !important;      /* cover most of screen width */
-    height: 80vh !important;    /* cover 80% of screen height */
-    margin: auto !important;    /* fully centered */
-    top: auto !important;       /* remove top margin on mobile */
-    transform: none !important; /* override modal-dialog-centered */
-  }
-
-  .cv-modal .modal-content {
-    height: 90%;
-  }
-
-  .cv-modal .modal-body iframe {
-    height: 100%;
-  }
-}
-
-@media (max-width:768px){
-  #about{
-    padding:6% 4%;            /* reduce side padding */
-    justify-content:flex-start; /* top align on mobile */
-    height:50vh;             /* half viewport height on mobile */
-  }
 }
 
 /* =====================
