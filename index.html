@@ -1,545 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- Your Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eris Buenaventura — IT Professional Portfolio</title>
+<meta name="description" content="Eris Alyana O. Buenaventura — IT Administration, Technical Support, Systems, Networking, Software QA, and Web Development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="light-mode">
+<body>
 
-    <!-- Navbar -->
-    <nav class="navbar fixed-top">
-        <div class="container-fluid d-flex align-items-center">
+<a href="#main" class="skip-link">Skip to content</a>
 
-            <!-- LEFT: BRAND -->
-            <a class="navbar-brand me-auto" href="#">
-                <img src="files/logo.png" alt="Logo" class="nav-logo">
-            </a>
-
-            <!-- CENTER: NAV LINKS (DESKTOP ONLY) -->
-            <ul class="navbar-nav flex-row mx-auto d-none d-lg-flex gap-4">
-                <li class="nav-item">
-                    <a class="nav-link text-red" href="#about">
-                        <i class="bi bi-info-circle"></i> About
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-red" href="#skills">
-                        <i class="bi bi-star-fill"></i> Skills
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-red" href="#experience">
-                        <i class="bi bi-briefcase-fill"></i> Experience
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-red" href="#contact">
-                        <i class="bi bi-envelope-fill"></i> Contact
-                    </a>
-                </li>
-            </ul>
-
-            <!-- RIGHT: SOCIAL ICONS + DARK MODE (DESKTOP) -->
-            <div class="d-none d-lg-flex align-items-center gap-3 ms-auto">
-
-                <!-- Social Icons -->
-                <a href="https://www.facebook.com/its.me.eris.buenaventura.22" target="_blank" class="nav-link text-red">
-                    <i class="bi bi-facebook fs-5"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/eris-alyana-buenaventura-1347b034a/" target="_blank" class="nav-link text-red">
-                    <i class="bi bi-linkedin fs-5"></i>
-                </a>
-                <a href="https://github.com/ErisBuenaventura" target="_blank" class="nav-link text-red">
-                    <i class="bi bi-github fs-5"></i>
-                </a>
-
-                <!-- Dark Mode Button (UNCHANGED) -->
-                <button id="toggleMode" class="btn btn-outline-red">
-                    <i class="bi bi-moon"></i> Dark Mode
-                </button>
-            </div>
-
-            <!-- MOBILE: DARK MODE + MENU -->
-            <div class="d-flex d-lg-none ms-auto">
-                <button id="toggleModeMobile" class="btn btn-outline-red me-2">
-                    <i class="bi bi-moon"></i> Dark Mode
-                </button>
-                <button class="btn btn-outline-red" id="sidebarToggle">
-                    <span id="menuIcon"><i class="bi bi-list"></i></span>
-                </button>
-            </div>
-
-        </div>
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <span class="name">ERIS BUENAVENTURA</span>
+      <span class="role">IT PROFESSIONAL</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about" data-nav>About</a>
+      <a href="#services" data-nav>Services</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#contact" data-nav>Contact</a>
+      <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener" class="nav-github">GitHub ↗</a>
     </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-    <!-- Sidebar (mobile only) -->
-    <div class="sidebar" id="sidebar">
-        <a href="#profile"><i class="bi bi-person"></i> Profile</a>
-        <a href="#about"><i class="bi bi-info-circle"></i> About</a>
-        <a href="#skills"><i class="bi bi-star-fill"></i> Skills</a>
-        <a href="#experience"><i class="bi bi-briefcase-fill"></i> Experience</a>
-        <a href="#contact"><i class="bi bi-envelope-fill"></i> Contact</a>
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+  <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">IT Professional</span>
+      <h1>IT Administrator &amp; Technology Support Professional</h1>
+      <p class="desc">I provide practical IT solutions through system support, troubleshooting, software testing, network assistance, technology implementation, and web development.</p>
+      <p class="support">Supporting technology, systems, and people through practical IT solutions.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Projects <span class="btn-arrow">→</span></a>
+        <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener" class="btn btn-dark">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of connected IT infrastructure nodes">
+        <defs>
+          <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#4C8DFF"/>
+            <stop offset="55%" stop-color="#9B6BFF"/>
+            <stop offset="100%" stop-color="#F0559C"/>
+          </linearGradient>
+        </defs>
+        <!-- connecting lines -->
+        <g stroke="rgba(255,255,255,0.22)" stroke-width="1.5" fill="none">
+          <line x1="240" y1="200" x2="120" y2="90"/>
+          <line x1="240" y1="200" x2="360" y2="90"/>
+          <line x1="240" y1="200" x2="90" y2="260"/>
+          <line x1="240" y1="200" x2="390" y2="260"/>
+          <line x1="240" y1="200" x2="240" y2="340"/>
+          <line x1="120" y1="90" x2="360" y2="90"/>
+          <line x1="90" y1="260" x2="390" y2="260"/>
+        </g>
+        <!-- server rack (central node) -->
+        <g transform="translate(196,160)">
+          <rect x="0" y="0" width="88" height="88" rx="10" fill="#0A0E1A" stroke="url(#nodeGrad)" stroke-width="1.5"/>
+          <rect x="14" y="16" width="60" height="10" rx="2" fill="#4C8DFF"/>
+          <rect x="14" y="34" width="60" height="10" rx="2" fill="#9B6BFF"/>
+          <rect x="14" y="52" width="60" height="10" rx="2" fill="#F0559C"/>
+          <circle cx="22" cy="70" r="3" fill="#22D3B8"/>
+          <circle cx="34" cy="70" r="3" fill="#4C8DFF"/>
+        </g>
+        <!-- satellite nodes -->
+        <g fill="#0F2038" stroke="url(#nodeGrad)" stroke-width="1.5">
+          <circle cx="120" cy="90" r="26"/>
+          <circle cx="360" cy="90" r="26"/>
+          <circle cx="90" cy="260" r="26"/>
+          <circle cx="390" cy="260" r="26"/>
+          <circle cx="240" cy="340" r="26"/>
+        </g>
+        <g stroke="#14B8A6" stroke-width="1.8" fill="none" stroke-linecap="round">
+          <!-- monitor icon -->
+          <rect x="106" y="78" width="28" height="18" rx="2"/>
+          <line x1="120" y1="96" x2="120" y2="102"/>
+          <!-- cloud icon -->
+          <path d="M346 96c-5 0-9-4-9-8 0-4 4-8 9-8 1-5 6-9 12-9 6 0 11 4 12 9 5 0 9 4 9 8 0 4-4 8-9 8z"/>
+          <!-- wifi icon -->
+          <path d="M78 266a18 18 0 0 1 24 0"/>
+          <path d="M84 272a10 10 0 0 1 12 0"/>
+          <circle cx="90" cy="278" r="1.6" fill="#14B8A6"/>
+          <!-- database icon -->
+          <ellipse cx="390" cy="252" rx="14" ry="5"/>
+          <path d="M376 252v14c0 3 6 5 14 5s14-2 14-5v-14"/>
+          <!-- user/support icon -->
+          <circle cx="240" cy="332" r="6"/>
+          <path d="M228 348c2-6 7-10 12-10s10 4 12 10"/>
+        </g>
+        <text x="240" y="400" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Inter, sans-serif" font-size="12" letter-spacing="2">SYSTEMS · NETWORK · SUPPORT</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT I DO ================= -->
+<section class="py bg-light" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What I Do</span>
+      <h2>What I Do</h2>
+      <p>Supporting users, systems, infrastructure, and technology solutions across different areas of IT.</p>
     </div>
 
-    <div id="overlay"></div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg></div>
+        <h3>IT Administration</h3>
+        <p>Supporting day-to-day IT operations, system implementation, documentation, user assistance, and technology-related concerns.</p>
+      </div>
 
-<main class="main-layout">
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3ZM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3Z"/></svg></div>
+        <h3>Technical Support</h3>
+        <p>Providing support for computers, laptops, printers, applications, peripherals, and common hardware and software issues.</p>
+      </div>
 
-            <!-- LEFT PROFILE PANEL -->
-            <aside id="profile" class="profile-panel fade-section">
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Systems Support</h3>
+        <p>Supporting business applications, information systems, system functionality, data, and technical issues.</p>
+      </div>
 
-                <div class="profile-top">
-                    <div class="profile-avatar">
-                        <img src="files/profile.jpg" alt="Profile">
-                    </div>
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg></div>
+        <h3>Networking</h3>
+        <p>Assisting with LAN/Wi-Fi connectivity, router configuration, IP configuration, cabling, and network troubleshooting.</p>
+      </div>
 
-                    <h2 class="profile-name">ERIS ALYANA BUENAVENTURA</h2>
-                    <p class="profile-role">Full Stack Web Developer</p>
-                </div>
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Software QA &amp; Testing</h3>
+        <p>Performing functional and manual testing to identify defects, validate features, and verify application behavior.</p>
+      </div>
 
-                <div class="profile-divider"></div>
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>Web Development</h3>
+        <p>Developing and maintaining database-driven web applications using PHP, MySQL, JavaScript, HTML, CSS, and related technologies.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- INFO LIST (plain, no card) -->
-                <div class="profile-info">
-                    <div class="info-item">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <span>Las Piñas, Philippines</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="bi bi-briefcase-fill"></i>
-                        <span>IT Administrator</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="bi bi-code-slash"></i>
-                        <span>Frontend / Backend Developer</span>
-                    </div>
-                </div>
+<!-- ================= ABOUT ================= -->
+<section class="py bg-white" id="about">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:48px;">
+      <span class="eyebrow">About Me</span>
+      <h2>About Me</h2>
+    </div>
 
-            </aside>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I am a Bachelor of Science in Information Technology graduate with practical experience across IT operations, technical support, system administration, software QA, networking, database-driven applications, and web development.</p>
+        <p>As an IT professional, I work with both people and technology. I assist users with technical concerns, troubleshoot hardware and software problems, support business applications, monitor system-related issues, and coordinate with developers or service providers when issues require further technical resolution.</p>
+        <p>I also have experience working with computer systems, printers, network devices, routers, databases, cloud storage, and business applications.</p>
+        <p>My development background gives me an additional advantage in IT operations because I can understand the technical side of applications, databases, source code, and system behavior. This allows me to troubleshoot issues more effectively and communicate technical requirements with developers.</p>
+        <p>I also have experience in UI and graphic design, photo editing, video editing, and digital content creation, allowing me to support both technical and creative requirements within an organization.</p>
+      </div>
 
-            <!-- CENTER CONTENT PANEL -->
-            <section class="content-panel">
+      <div class="highlight-grid reveal">
+        <div class="highlight-card">
+          <div class="num">01</div>
+          <h4>BSIT Graduate</h4>
+          <p>Bachelor of Science in Information Technology</p>
+        </div>
+        <div class="highlight-card">
+          <div class="num">02</div>
+          <h4>IT Operations</h4>
+          <p>Practical experience supporting organizational technology</p>
+        </div>
+        <div class="highlight-card">
+          <div class="num">03</div>
+          <h4>Systems</h4>
+          <p>Business applications, databases, and system implementation</p>
+        </div>
+        <div class="highlight-card">
+          <div class="num">04</div>
+          <h4>Technical Support</h4>
+          <p>Hardware, software, networking, and end-user assistance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- ABOUT SECTION -->
-                <section id="about" class="about-section fade-section">
-                <h1>About Me</h1>
-                <p>
-                    Hi, I am an IT Administrator experienced in managing servers, testing systems, and providing technical support to ensure smooth operations.
-                </p>
+<!-- ================= SKILLS ================= -->
+<section class="py bg-light" id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Technical Skills</span>
+      <h2>Technical Skills</h2>
+      <p>A combination of IT operations, systems, networking, QA, database, and development skills.</p>
+    </div>
 
-                <div class="about-buttons">
-                    <a href="#skills" class="btn btn-outline-danger">Read More</a>
-                    <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cvModal">View CV</button>
-                </div>
+    <div class="skills-grid">
+      <div class="skill-block reveal">
+        <h3><span class="dot"></span>IT &amp; Systems</h3>
+        <div class="pill-row">
+          <span class="pill">IT Administration</span>
+          <span class="pill">Technical Support</span>
+          <span class="pill">End-User Support</span>
+          <span class="pill">System Implementation</span>
+          <span class="pill">System Monitoring</span>
+          <span class="pill">Software Installation</span>
+          <span class="pill">Hardware Troubleshooting</span>
+          <span class="pill">Software Troubleshooting</span>
+          <span class="pill">IT Documentation</span>
+          <span class="pill">User Assistance</span>
+        </div>
+      </div>
 
-                <div class="about-social">
-                    <a href="https://www.facebook.com/its.me.eris.buenaventura.22"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/eris-alyana-buenaventura-1347b034a/"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com/ErisBuenaventura"><i class="bi bi-github"></i></a>
-                </div>
+      <div class="skill-block reveal">
+        <h3><span class="dot"></span>Networking</h3>
+        <div class="pill-row">
+          <span class="pill">LAN / Wi-Fi</span>
+          <span class="pill">IP Configuration</span>
+          <span class="pill">Router Configuration</span>
+          <span class="pill">Access Point Configuration</span>
+          <span class="pill">Connectivity Troubleshooting</span>
+          <span class="pill">Network Diagnostics</span>
+          <span class="pill">Network Cabling</span>
+          <span class="pill">Device Connectivity</span>
+        </div>
+      </div>
 
-                <div class="about-chart">
-                    <canvas id="experienceChart"></canvas>
-                </div>
-            </section>
-    
-            <div class="section-divider"></div>
+      <div class="skill-block reveal">
+        <h3><span class="dot"></span>Software QA</h3>
+        <div class="pill-row">
+          <span class="pill">Manual Testing</span>
+          <span class="pill">Functional Testing</span>
+          <span class="pill">Bug Identification</span>
+          <span class="pill">Feature Validation</span>
+          <span class="pill">UAT Support</span>
+          <span class="pill">Issue Documentation</span>
+          <span class="pill">Regression Testing</span>
+          <span class="pill">Application Verification</span>
+        </div>
+      </div>
 
-            <section id="skills" class="skills-section fade-section">
-                <h1 class="skills-title"> <i class="bi bi-tools"></i> Skills</h1>
+      <div class="skill-block reveal">
+        <h3><span class="dot"></span>Development</h3>
+        <div class="pill-row">
+          <span class="pill">PHP</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">SQL</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Bootstrap</span>
+          <span class="pill">Tailwind CSS</span>
+          <span class="pill">AJAX</span>
+          <span class="pill">Git</span>
+          <span class="pill">GitHub</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- FRONTEND -->
-                <div class="skill-category">
-                <h3><i class="bi bi-window"></i> Front-End Development</h3>
-                <div class="marquee">
-                    <div class="skills-row">
-                    <img src="images/html.png" class="skill-icon">
-                    <img src="images/css.png" class="skill-icon">
-                    <img src="images/js.png" class="skill-icon">
-                    <img src="images/bootstrap.png" class="skill-icon">
-                    <img src="images/tailwind.png" class="skill-icon">
-                    <img src="images/ajax.png" class="skill-icon">
-                    <img src="images/reactjs.png" class="skill-icon">
+<!-- ================= PROJECTS ================= -->
+<section class="py bg-white" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Featured Projects</span>
+      <h2>Featured Projects</h2>
+      <p>Selected projects demonstrating my experience in systems, databases, web applications, and practical technology solutions.</p>
+    </div>
 
-                    <!-- Duplicate for seamless loop -->
-                    <img src="images/html.png" class="skill-icon">
-                    <img src="images/css.png" class="skill-icon">
-                    <img src="images/js.png" class="skill-icon">
-                    <img src="images/bootstrap.png" class="skill-icon">
-                    <img src="images/tailwind.png" class="skill-icon">
-                    <img src="images/ajax.png" class="skill-icon">
-                    <img src="images/reactjs.png" class="skill-icon">
-                    </div>
-                </div>
-                </div>
+    <div class="projects-grid">
 
-                <!-- BACKEND -->
-                <div class="skill-category">
-                <h3><i class="bi bi-server"></i> Back-End Development</h3>
-                <div class="marquee">
-                    <div class="skills-row">
-                    <img src="images/php.png" class="skill-icon">
-                    <img src="images/dotnet.png" class="skill-icon">
-                    <img src="images/php.png" class="skill-icon">
-                    <img src="images/dotnet.png" class="skill-icon">
-                    </div>
-                </div>
-                </div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <span class="project-num">01</span>
+          <span class="project-cat">System / Web Application</span>
+        </div>
+        <h3>ITPMS</h3>
+        <div class="full-name">IT Project Management System</div>
+        <p class="desc">A web-based system designed to help manage IT projects, monitor progress, track project status, and centralize project information in one platform.</p>
+        <div class="key-areas">
+          <span>Project Management</span><span>Status Tracking</span><span>Progress Monitoring</span><span>Dashboard Reporting</span><span>Database Management</span>
+        </div>
+        <div class="tech-row">
+          <span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Bootstrap</span>
+        </div>
+        <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener" class="project-link">View on GitHub <span class="btn-arrow">→</span></a>
+      </div>
 
-                <!-- DATABASE -->
-                <div class="skill-category">
-                <h3><i class="bi bi-database"></i> Database Management</h3>
-                    <div class="skill-row">
-                    <img src="images/mysql.png" class="skill-icon">
-                    </div>
-                </div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <span class="project-num">02</span>
+          <span class="project-cat">Business Application</span>
+        </div>
+        <h3>K-EGG</h3>
+        <div class="full-name">Web-Based Business Application</div>
+        <p class="desc">A web-based business application demonstrating practical experience in database-driven web development, business process implementation, data management, and user-focused system design.</p>
+        <div class="key-areas">
+          <span>Web Application</span><span>Business Process</span><span>Database Integration</span><span>Data Management</span><span>User Interface</span>
+        </div>
+        <div class="tech-row">
+          <span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span>
+        </div>
+        <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener" class="project-link">View on GitHub <span class="btn-arrow">→</span></a>
+      </div>
 
-                <!-- DEVELOPMENT TOOLS -->
-                <div class="skill-category">
-                <h3><i class="bi bi-code"></i> Development Tools</h3>
-                <div class="marquee">
-                    <div class="skills-row">
-                    <img src="images/vscode.png" class="skill-icon">
-                    <img src="images/xampp.png" class="skill-icon">
-                    <img src="images/github.png" class="skill-icon">
-                    <img src="images/expo.png" class="skill-icon">
-                    <img src="images/android.png" class="skill-icon">
-                    <img src="images/vscode.png" class="skill-icon">
-                    <img src="images/xampp.png" class="skill-icon">
-                    <img src="images/github.png" class="skill-icon">
-                    <img src="images/expo.png" class="skill-icon">
-                    <img src="images/android.png" class="skill-icon">
-                    </div>
-                </div>
-                </div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <span class="project-num">03</span>
+          <span class="project-cat">Database Application</span>
+        </div>
+        <h3>SAVINGS</h3>
+        <div class="full-name">Savings Management System</div>
+        <p class="desc">A database-driven application designed to organize and manage savings-related information and transactions.</p>
+        <div class="key-areas">
+          <span>Data Management</span><span>Database Integration</span><span>Business Logic</span><span>Record Management</span><span>User Interface</span>
+        </div>
+        <div class="tech-row">
+          <span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span>
+        </div>
+        <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener" class="project-link">View on GitHub <span class="btn-arrow">→</span></a>
+      </div>
 
-                <!-- PRODUCTIVITY TOOLS -->
-                <div class="skill-category">
-                <h3><i class="bi bi-briefcase"></i> Productivity Tools</h3>
-                <div class="marquee">
-                    <div class="skills-row">
-                    <img src="images/office.png" class="skill-icon">
-                    <img src="images/google.png" class="skill-icon">
-                    <img src="images/canva.png" class="skill-icon">
-                    <img src="images/photoshop.png" class="skill-icon">
-                    <img src="images/office.png" class="skill-icon">
-                    <img src="images/google.png" class="skill-icon">
-                    <img src="images/canva.png" class="skill-icon">
-                    <img src="images/photoshop.png" class="skill-icon">
-                    </div>
-                </div>
-                </div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <span class="project-num">04</span>
+          <span class="project-cat">E-Commerce Platform</span>
+        </div>
+        <h3>E-COMMERCE</h3>
+        <div class="full-name">Online Business Platform</div>
+        <p class="desc">A web-based e-commerce project demonstrating practical experience in building an online business platform with product management, database integration, and user-focused functionality.</p>
+        <div class="key-areas">
+          <span>Product Management</span><span>Database Integration</span><span>Web Interface</span><span>Business Functionality</span><span>Data Management</span>
+        </div>
+        <div class="tech-row">
+          <span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Bootstrap</span>
+        </div>
+        <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener" class="project-link">View on GitHub <span class="btn-arrow">→</span></a>
+      </div>
 
-                <!-- HOSTING -->
-                <div class="skill-category">
-                <h3><i class="bi bi-cloud"></i> Domain & Hosting</h3>
-                <div class="marquee">
-                    <div class="skills-row">
-                    <img src="images/infinityfree.png" class="skill-icon">
-                    <img src="images/crazydomain.png" class="skill-icon">
-                    <img src="images/brevo.png" class="skill-icon">
-                    <img src="images/infinityfree.png" class="skill-icon">
-                    <img src="images/crazydomain.png" class="skill-icon">
-                    <img src="images/brevo.png" class="skill-icon">
-                    </div>
-                </div>
-                </div>
+    </div>
+  </div>
+</section>
 
-            </section>
+<!-- ================= EXPERIENCE ================= -->
+<section class="py bg-light" id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Professional Experience</span>
+      <h2>Professional Experience</h2>
+    </div>
 
-            <div class="section-divider"></div>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="period">August 2025 — Present</div>
+        <h3>IT Personnel</h3>
+        <div class="org">Saveplus Labor Service Cooperative</div>
+        <p class="desc">Providing day-to-day IT support and assisting with the organization's technology systems, applications, hardware, network connectivity, and IT operations.</p>
+        <ul class="resp-list">
+          <li>IT administration and daily IT operations</li>
+          <li>End-user technical support</li>
+          <li>Computer and laptop troubleshooting</li>
+          <li>Printer setup and troubleshooting</li>
+          <li>Software installation and configuration</li>
+          <li>Business application support</li>
+          <li>Software QA and functional testing</li>
+          <li>Network connectivity troubleshooting</li>
+          <li>Router and network device support</li>
+          <li>System implementation assistance</li>
+          <li>Database and data management</li>
+          <li>Google Drive and digital file management</li>
+          <li>Coordination with developers and technical providers</li>
+          <li>IT documentation and user assistance</li>
+          <li>Basic graphic and multimedia support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <section id="experience" class="experience-section fade-section">
-                <h1 class="animate-title"><i class="bi bi-laptop-fill"></i> Experience</h1>
+<!-- ================= STRENGTHS ================= -->
+<section class="py bg-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Professional Strengths</span>
+      <h2>Professional Strengths</h2>
+    </div>
 
-                <div class="experience-grid">
+    <div class="grid-4">
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Problem Solving</h3>
+        <p>Investigating technical issues, identifying root causes, and finding practical solutions.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+        <h3>Adaptability</h3>
+        <p>Comfortable working across IT support, systems, networking, QA, databases, and development.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div>
+        <h3>Technical Understanding</h3>
+        <p>Able to understand how applications, databases, hardware, networks, and users interact within an IT environment.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>Continuous Learning</h3>
+        <p>Continuously improving technical knowledge through real-world projects, troubleshooting, and new technologies.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <!-- Experience 1 -->
-                    <div class="experience-card" style="background-image: url('files/saveplus.png');">
-                        <div class="experience-card-header">
-                            <div class="header-content">
-                                <div>
-                                    <h3 class="company">SAVE PLUS LABOR SERVICE COOPERATIVE</h3>
-                                    <p class="position">IT Admin</p>
-                                </div>
-                                <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSavePlus">
-                                    View
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+<!-- ================= CONTACT ================= -->
+<section class="py bg-navy contact-section" id="contact">
+  <div class="wrap contact-inner">
+    <div class="reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's Connect</h2>
+      <p class="desc">I'm open to professional opportunities involving IT administration, technical support, systems support, IT operations, and technology solutions.</p>
+      <div class="contact-actions">
+        <a href="mailto:erisbuenaventura22@gmail.com" class="btn btn-primary">Contact Me <span class="btn-arrow">→</span></a>
+        <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener" class="btn btn-dark">GitHub ↗</a>
+      </div>
+    </div>
 
-                    <!-- Experience 2 -->
-                    <div class="experience-card" style="background-image: url('files/sbt.png');">
-                        <div class="experience-card-header">
-                            <div class="header-content">
-                                <div>
-                                    <h3 class="company">SUPERIOR BT INC</h3>
-                                    <p class="position">IT Intern</p>
-                                </div>
-                                <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalSBT">
-                                    View
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Experience 3 -->
-                    <div class="experience-card" style="background-image: url('files/kegg.png');">
-                        <div class="experience-card-header">
-                            <div class="header-content">
-                                <div>
-                                    <h3 class="company">K-EGG ACCOUNTING SYSTEM</h3>
-                                    <p class="position">Freelancing</p>
-                                </div>
-                                <button type="button" class="btn btn-outline-light btn-sm view-btn" data-bs-toggle="modal" data-bs-target="#modalKEGG">
-                                    View
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- =====================
-            MODALS
-            ===================== -->
-
-            <!-- Modal 1: SAVE PLUS -->
-                <div class="modal fade" id="modalSavePlus" tabindex="-1" aria-labelledby="modalSavePlusLabel">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalSavePlusLabel">SAVE PLUS LABOR SERVICE COOPERATIVE</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p><strong>Position:</strong> IT Admin</p>
-                            <p><strong>Duration:</strong> August 2025 - Present</p>
-                            <p><strong>Responsibilities:</strong></p>
-                            <ul>
-                            <li>Configured, installed, and troubleshooted Epson printers for office operations.</li>
-                            <li>Coordinated with partner developers regarding system updates, fixes, and improvements.</li>
-                            <li>Conducted system testing, documented results, and reported technical issues.</li>
-                            <li>Collaborated with the General Manager regarding system updates and operational improvements.</li>
-                            <li>Managed and maintained the Sentry biometric server system for client attendance monitoring.</li>
-                            <li>Provided email and chat support for document processing and technical requests.</li>
-                            </ul>
-                            <p><strong>Location:</strong> Moonwalk, Parañaque City, Philippines</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Modal 2: SBT -->
-                    <div class="modal fade" id="modalSBT" tabindex="-1" aria-labelledby="modalSBTLabel">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalSBTLabel">SUPERIOR BT INC</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p><strong>Position:</strong> IT Intern</p>
-                            <p><strong>Duration:</strong> February 2025 – June 2025</p>
-                            <p><strong>Responsibilities:</strong></p>
-                            <ul>
-                            <li>Coordinated with supervisor and co-interns on assigned tasks.</li>
-                            <li>Assisted in building websites using HTML, CSS, Bootstrap, Tailwind CSS, and JavaScript.</li>
-                            <li>Performed testing and documentation for WordPress websites.</li>
-                            <li>Used GitHub for collaboration and version control.</li>
-                            <li>Troubleshot Samsung and Brother printers.</li>
-                            <li>Learned basic networking concepts including OSI model and ISP operations.</li>
-                            <li>Performed RJ45 cable crimping and basic PC assembly.</li>
-                            </ul>
-                            <p><strong>Location:</strong> Alabang, Muntinlupa City, Philippines</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Modal 3: KEGG -->
-                    <div class="modal fade" id="modalKEGG" tabindex="-1" aria-labelledby="modalKEGGLabel">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalKEGGLabel">K-EGG ACCOUNTING SYSTEM</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p><strong>Position:</strong> Website Developer</p>
-                            <p><strong>Duration:</strong> June 2025 – July 2025</p>
-                            <p><strong>Tech Stack:</strong> HTML, CSS/Bootstrap, JavaScript, PHP, MySQL</p>
-                            <p><strong>Key Features:</strong></p>
-                            <ul>
-                            <li>Developed a web-based accounting system for business financial management.</li>
-                            <li>Implemented secure login and authentication for users.</li>
-                            <li>Built Staff and Admin dashboards with role-based access.</li>
-                            <li>Staff module: Manage sales and expense records.</li>
-                            <li>Admin panel: Manage staff accounts, sales and expenses, ledger and journal entries, financial reports, tax computation, staff balances, and data storage.</li>
-                            </ul>
-                            <p><strong>Location:</strong> CAA, Las Piñas City, Philippines</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="section-divider"></div>
-
-            <section id="contact" class="contact-section fade-section">
-
-            <h1 class="animate-title"><i class="bi bi-briefcase-fill"></i> CONTACT</h1>
-
-            <div class="contact-wrapper">
-
-                <!-- Full Background Map -->
-                <div id="map"></div>
-
-                <!-- Floating Contact Card -->
-                <div class="contact-card">
-
-                    <!-- Toggle Arrow -->
-                    <div class="card-toggle">
-                        <span id="toggleArrow">&#9650;</span>
-                    </div>
-
-                    <!-- Wrap content for toggle animation -->
-                    <div class="card-content">
-
-                        <div class="card-header">
-                            <h3>Contact Me</h3>
-                        </div>
-
-                        <div class="card-info">
-                            <p><strong>Email:</strong><br> erisbuenaventura22@gmail.com</p>
-                            <p><strong>Phone:</strong><br> 0977-171-4009</p>
-                            <p><strong>Location:</strong><br> Las Piñas City, Philippines</p>
-                        </div>
-
-                        <div class="card-social">
-                            <a href="https://www.facebook.com/its.me.eris.buenaventura.22" target="_blank">Facebook</a>
-                            <a href="https://github.com/ErisBuenaventura" target="_blank">GitHub</a>
-                            <a href="https://www.linkedin.com/in/eris-alyana-buenaventura-1347b034a/" target="_blank">LinkedIn</a>
-                        </div>
-
-                        <div class="card-form">
-                            <h4>Send a Message</h4>
-                            <form action="https://formspree.io/f/mwvnbeyj" method="POST">
-                                <input type="text" name="name" placeholder="Your Name" required>
-                                <input type="email" name="_replyto" placeholder="Your Email" required>
-                                <textarea name="message" placeholder="Your Message" required></textarea>
-                                <button type="submit">Send Message</button>
-                            </form>
-                        </div>
-
-                    </div> <!-- end card-content -->
-
-                </div> <!-- end contact-card -->
-
-            </div> <!-- end contact-wrapper -->
-
-            </section>
-
-        </section>
-
-        <!-- RIGHT PANEL -->
-        <aside class="right-panel-new">
-            <!-- NOTIFICATIONS -->
-            <div class="notifications-new">
-                <div class="notifications-header-new">
-                    <i class="fas fa-bell notification-icon-new"></i> Notifications
-                </div>
-                <ul class="notification-list">
-                    <li class="notification-item">
-                        <span class="notification-dot"></span>
-                        <div class="notification-text">
-                            <p class="notification-title">Notification and skills graph improvements</p>
-                            <span class="notification-time">Under Development</span>
-                        </div>
-                    </li>
-                    <li class="notification-item">
-                        <span class="notification-dot" style="background:#e63946;"></span>
-                        <div class="notification-text">
-                            <p class="notification-title">About Me Page layout improvements</p>
-                            <span class="notification-time">Upcoming</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- SKILLS GRAPH -->
-            <div class="skills-graph-new">
-                <div class="chart-header-new"><i class="fas fa-chart-line"></i> Skills Graph</div>
-                <div class="chart-wrapper">
-                    <canvas id="skillsChart"></canvas>
-                </div>
-            </div>
-        </aside>
+    <div class="contact-info reveal">
+      <div class="contact-row">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="label">Location</div>
+          <div class="value">Las Piñas City, Philippines</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg></div>
+        <div>
+          <div class="label">Phone</div>
+          <div class="value">0977-171-4009</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91.5S18.73.15 16 2a13.38 13.38 0 0 0-7 0C6.27.15 5.09.5 5.09.5A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+        <div>
+          <div class="label">GitHub</div>
+          <div class="value">github.com/ErisBuenaventura</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
-        <!-- CV Modal -->
-        <div class="modal fade cv-modal" id="cvModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">My Resume</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <iframe src="pdfjs/web/viewer.html?file=../../files/resume.pdf"></iframe>
-            </div>
-            <div class="modal-footer">
-                <a href="files/resume.pdf" download class="btn btn-outline-danger">
-                <i class="bi bi-download"></i> Download
-                </a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-            </div>
-        </div>
-        </div>
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">ERIS BUENAVENTURA</div>
+        <div class="role">IT PROFESSIONAL</div>
+        <div class="tagline">IT Administration • Technical Support • Systems • Networking • Software QA • Web Development</div>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/ErisBuenaventura" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Eris Alyana O. Buenaventura</div>
+  </div>
+</footer>
 
-    <!-- Footer --> 
-    <footer class="text-center py-1">
-        &copy; 2026 Eris • All Rights Reserved
-    </footer>
+<script src="script.js"></script>
 
-        <!-- Bootstrap JS (with Popper) -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
-
-        <!-- Leaflet JS -->
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-        <!-- Your Custom JS -->
-        <script src="script.js"></script>
 </body>
 </html>
